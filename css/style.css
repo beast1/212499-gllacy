@@ -1,6 +1,245 @@
+/*
+Порядок свойст: 
+
+Позиционирование
+Блочная модель
+Типографика
+Оформление
+Анимация
+Разное
+*/
+
+
+/*Общие стили*/
+
+html,
 body {
     font-size: 16px;
     line-height: 22px;
-    color: #323232;
+    color: #ffffff;
     font-family: "Roboto", "Arial", sans-serif;
+    font-weight: bold;
+    
+    background-color: #99aea2; 
 }
+
+.container {
+    width: 1146px;
+    margin: 0 auto;
+    padding: 0 27px;
+}
+
+/*Общие стили.Хедер*/
+
+.hidden {
+    display: none;
+}
+
+.page-header {
+    
+    
+    min-height: 610px;
+}
+
+.page-header-top {
+    display: flex;
+    
+    outline: 2px dashed black;
+}
+
+.logo {
+    width: 150px;
+    
+    outline: 2px dashed red;
+}
+
+.page-header-menu {
+    width: 360px;
+    
+    outline: 2px dashed red;
+}
+
+.user-block {
+    
+    margin-left: auto;
+    width: 265px;
+    
+    outline: 2px dashed red;
+}
+
+/*Общие стили.Футер*/
+
+.page-footer {
+    display: flex;
+    
+    outline: 2px dashed black;
+}
+
+/*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    
+/*    flex-basis: 190px;*/
+    width: 190px;
+    
+    outline: 2px dashed red;
+}
+
+.footer-menu {
+/*
+    display: flex;
+    flex-direction: column;
+    
+    flex-basis: 310px;
+*/
+}
+
+.footer-copyright {
+    width: 190px;
+}
+
+.footer-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    width: 310px;
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+/*Стили index.html*/
+
+.holder {
+    display: flex;
+    justify-content: space-between;
+    
+    margin: 40px 0;
+    
+    outline: 2px dashed black;
+}
+
+.fill {
+    width: 560px;
+    
+    outline: 2px dashed red;
+}
+
+.popular {
+    display: flex;
+    justify-content: space-between;
+    
+    outline: 2px dashed black;
+}
+
+.popular-item {
+    width: 267px;
+    
+    outline: 2px dashed red;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 20px;
+}
+
+.features p {
+    display: inline;
+}
+
+.features-item {
+    width: 480px;
+    padding-left: 60px;
+}
+
+.location {
+    position: relative;
+    /*Сомнительный костыль*/
+    right: 27px;
+}
+
+.contacts {
+    width: 250px;
+    padding: 25px;
+    
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: normal;
+    color: #000000;
+    
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background-color: #ffffff;
+}
+
+
+/*
+.logo {
+    margin-top: 10px;
+}
+
+.page-header {
+    display: flex;
+}
+
+.page-header-top {
+    display: flex;
+}
+
+.page-header-menu {
+    margin-top: 20px;
+    
+    outline: 2px dashed red;
+}
+
+.page-header-menu ul {
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.page-header-menu li {
+    display: inline-block;
+    
+    padding: 10px 13px;
+    padding-left: 1px;
+    
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.user-block {
+    display: flex;
+    justify-content: space-between;
+    
+    width: 260px;
+    margin-top: 20px;
+    margin-left: 358px;
+    
+    outline: 2px dashed red;
+}
+
+.search {
+    width: 30px;
+}
+
+.login {
+    width: 90px;
+}
+
+.basket {
+    width: 120px;
+}
+*/
+
+/*!Исользовать дополнительные стили сегда*/
+
+

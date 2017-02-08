@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Academy: Каталог Глейси</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <header class="page-header">
         <div class="logo">
-            <a href="#"><img src="img/logo-short.svg" alt="GllacyShop" width="154px" height="64px"></a>
+            <a href="#"><img src="img/logo.png" alt="GllacyShop" width="154px" height="64px"></a>
         </div>
-        <nav class="header-menu">
+        <nav class="page-header-menu">
             <ul>
                 <li>
                     <a href="#">Каталог</a>
-                    <ul class="sub-menu">
+                    <ul class="sub-menu hidden-container hidden">
                         <li><a href="#">Новинки</a></li>
                         <li><a href="#">Сливочное</a></li>
                         <li><a href="#">Щербеты</a></li>
@@ -28,55 +29,57 @@
                 <li><a href="#">О компании</a></li>
             </ul>
         </nav>
-        <div class="search">
-            <button class="header-btn" type="button">Поиск</button>
-            <div class="search-hidden">
-                <form action="#" method="get">
-                    <input type="text" name="search" placeholder="Что ищем?">
-                </form>
+        <div class="user-block">
+            <div class="search">
+                <button class="header-btn" type="button">Поиск</button>
+                <div class="search hidden-container hidden">
+                    <form action="#" method="get">
+                        <input type="text" name="search" placeholder="Что ищем?">
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="login">
-            <button class="header-btn" type="button">Вход</button>
-            <div class="login-hidden">
-                <form action="#" method="post">
-                    <input type="email" name="login-email" placeholder="Электронная почта">
-                    <input type="password" name="login-password" placeholder="Пароль">
-                    <button class="btn" type="submit" name="login-btn">Вход</button>
-                    <a href="#">Забыли пароль?</a>
-                    <a href="#">Новая регистрация</a>
-                </form>
+            <div class="login">
+                <button class="header-btn" type="button">Вход</button>
+                <div class="login hidden-container hidden">
+                    <form action="#" method="post">
+                        <input type="email" name="login-email" placeholder="Электронная почта">
+                        <input type="password" name="login-password" placeholder="Пароль">
+                        <button class="btn" type="submit" name="login-btn">Вход</button>
+                        <a href="#">Забыли пароль?</a>
+                        <a href="#">Новая регистрация</a>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="basket">
-            <button class="header-btn" type="button">2 товара</button>
-            <div class="basket-hidden">
-                <table>
-                    <tr>
-                        <td>
-                            <button type="button" class="cross-it-out"></button>
-                        </td>
-                        <td>
-                            <a href="#"><img src="img/preview-1.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                        </td>
-                        <td><a href="#">Пломбир с апельсиновым джемом</a></td>
-                        <td>1,5 кг х <span class="disabled">200 руб.</span></td>
-                        <td>300 руб.</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button type="button" class="cross-it-out"></button>
-                        </td>
-                        <td>
-                            <a href="#"><img src="img/preview-2.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                        </td>
-                        <td><a href="#">Клубничный пломбир с присыпкой из белого шоколада</a></td>
-                        <td>1,5 кг х <span class="disabled">300 руб.</span></td>
-                        <td>450 руб.</td>
-                    </tr>
-                </table>
-                <span>Итого: 750 руб.</span>
-                <a class="btn" href="#">Оформить заказ</a>
+            <div class="basket">
+                <button class="header-btn" type="button">2 товара</button>
+                <div class="basket hidden-container hidden">
+                    <table>
+                        <tr>
+                            <td>
+                                <button type="button" class="cross-it-out"></button>
+                            </td>
+                            <td>
+                                <a href="#"><img src="img/preview-1.jpg" alt="Иконка товара" width="34px" height="34px"></a>
+                            </td>
+                            <td><a href="#">Пломбир с апельсиновым джемом</a></td>
+                            <td>1,5 кг х <span class="disabled">200 руб.</span></td>
+                            <td>300 руб.</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" class="cross-it-out"></button>
+                            </td>
+                            <td>
+                                <a href="#"><img src="img/preview-2.jpg" alt="Иконка товара" width="34px" height="34px"></a>
+                            </td>
+                            <td><a href="#">Клубничный пломбир с присыпкой из белого шоколада</a></td>
+                            <td>1,5 кг х <span class="disabled">300 руб.</span></td>
+                            <td>450 руб.</td>
+                        </tr>
+                    </table>
+                    <span>Итого: 750 руб.</span>
+                    <a class="btn" href="#">Оформить заказ</a>
+                </div>
             </div>
         </div>
         <p>С 10 до 20, ежедневно</p>
