@@ -16,7 +16,7 @@ html,
 body {
     font-size: 16px;
     line-height: 22px;
-    color: #ffffff;
+    color: #000000;
     font-family: "Roboto", "Arial", sans-serif;
     font-weight: bold;
     
@@ -36,70 +36,228 @@ body {
 }
 
 .page-header {
+    color: #ffffff;
     
-    
-    min-height: 610px;
+    margin-top: 10px;
+}
+
+.page-header-slider {
+    min-height: 520px;
 }
 
 .page-header-top {
     display: flex;
     
-    outline: 2px dashed black;
+/*    outline: 2px dashed black;*/
 }
 
 .logo {
     width: 150px;
+    margin-right: 10px;
     
-    outline: 2px dashed red;
+/*    outline: 2px dashed red;*/
 }
 
 .page-header-menu {
-    width: 360px;
+    font-size: 16px;
+    line-height: 18px;
     
-    outline: 2px dashed red;
+    width: 360px;
+    margin-top: 15px;
+    
+    
+/*    outline: 2px dashed red;*/
+}
+
+.page-header-menu ul {
+    font-size: 0;
+    
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.page-header-menu li {
+    font-size: 16px;
+    line-height: 18px;
+    
+    display: inline-block;
+    
+}
+
+.page-header-menu a {
+    padding: 14px 7px;
 }
 
 .user-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
     
     margin-left: auto;
+    padding-top: 15px;
     width: 265px;
     
-    outline: 2px dashed red;
+/*    outline: 2px dashed red;*/
 }
 
-/*Общие стили.Футер*/
+.user-block-controls {
+    font-size: 0;
+}
+
+.header-btn {
+    display: inline-block;
+    
+    padding: 8px 0;
+    margin-right: 10px;
+}
+
+.header-btn:last-of-type {
+    margin-right: 0;
+}
+
+.user-block-contacts {
+    margin-top: 18px;
+    width: 175px;
+    
+    position: relative;
+}
+
+
+.user-block-contacts p {
+    margin: 0;
+}
+
+.user-block-contacts span {
+    font-size: 22px;
+    line-height: 24px;
+    font-weight: bold;
+    
+    position: absolute;
+}
+
+/*Общие стили.Футер*/ 
 
 .page-footer {
-    display: flex;
-    
-    outline: 2px dashed black;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: normal;
 }
 
-/*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
+.page-footer .container {
+    display: flex;
+    justify-content: space-between;
+}
 
 .footer-social {
     display: flex;
     justify-content: space-between;
     
-/*    flex-basis: 190px;*/
+    flex-basis: 190px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-between;
+    
+    flex-basis: 310px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.footer-menu ul {
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.footer-copyright p {
+    margin: 0;
+}
+
+/*Старая версия футера.Начало*/
+
+.page-footer {
+    display: flex;
+    
+/*    outline: 2px dashed black;*/
+}
+
+/*Сквозные элементы*/
+
+h2 {
+    margin: 0; /*Можно ли так делать?*/
+    
+    font-size: 35px;
+    line-height: 41px;
+}
+
+h3 {
+    margin: 0; /*Можно ли так делать?*/
+    
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block; /*Нужен ли фикс с удалением пробелов?*/
+    padding: 10px 20px;
+    
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 24px;
+    
+    background-color: #ed5b3d;
+    border: none;
+    text-decoration: none;
+}
+
+/*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
+
+/*
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    
+    flex-basis: 190px;
     width: 190px;
     
     outline: 2px dashed red;
 }
 
 .footer-menu {
-/*
     display: flex;
     flex-direction: column;
     
     flex-basis: 310px;
-*/
 }
+*/
 
+/*
 .footer-copyright {
     width: 190px;
 }
+*/
 
+/*
 .footer-menu ul {
     display: flex;
     flex-wrap: wrap;
@@ -111,6 +269,9 @@ body {
     
     list-style: none;
 }
+*/
+
+/*Старая версия футера. Конец*/
 
 /*Стили index.html*/
 
@@ -123,39 +284,144 @@ body {
     outline: 2px dashed black;
 }
 
+.holder-1 {
+    display: flex;
+    justify-content: space-between;
+    
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.holder-1 .fill {
+    display: flex;
+    flex-direction: column;
+}
+
+.holder-1 .fill span {
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.holder-1 .fill .btn {
+    align-self: flex-end;
+}
+
 .fill {
-    width: 560px;
+    flex-basis: 520px;
+    padding: 20px;
     
     outline: 2px dashed red;
 }
+
+.holder-2 {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.holder-2 .fill {
+    background-color: #ffffff;
+}
+
+.holder-2 b {
+    display: block;
+}
+
+.holder-2 a {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/*
+.font-black {
+    color: #000000;
+}
+*/
 
 .popular {
     display: flex;
     justify-content: space-between;
     
-    outline: 2px dashed black;
+    color: #ffffff;
+    
+/*    outline: 2px dashed black;*/
 }
 
 .popular-item {
     width: 267px;
     
-    outline: 2px dashed red;
+    position: relative;
+    
+/*    outline: 2px dashed red;*/
 }
 
-.features {
+/*
+Хувер фон (в разработке)
+Проблема: Как разметить, чтобы фон не закрывал наполнение?
+.popular-item-hidden {
+    width: 267px;
+    padding-top: 5px;
+    padding-right: 13px;
+    padding-left: 13px;
+    padding-bottom: 80px;
+    
+    position: absolute;
+    z-index: -1;
+    
+    background-color: #ffffff; 
+    opacity: 0.3;
+}
+*/
+
+.popular-item-hidden-btn {
+    display: none;
+}
+
+.popular-item:hover .popular-item-hidden-btn {
+    display: flex;
+    justify-content: space-around;
+    
+    width: 267px;
+    
+    position: absolute;
+}
+
+.features {  
+    padding: 30px 20px;
+}
+
+.features-promo {
+    display: inline;
+    
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.features-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
     
-    padding: 20px;
-}
-
-.features p {
-    display: inline;
+    min-height: 180px;
+    margin-top: 27px;
 }
 
 .features-item {
     width: 480px;
     padding-left: 60px;
+    
+    font-size: 16px;
+    line-height: 22px;
+    
+    font-weight: normal;
+}
+
+.features-item p {
+    margin: 0;
 }
 
 .location {
@@ -171,7 +437,6 @@ body {
     font-size: 14px;
     line-height: 20px;
     font-weight: normal;
-    color: #000000;
     
     position: absolute;
     top: 65px;
@@ -179,66 +444,113 @@ body {
     background-color: #ffffff;
 }
 
+/*Cтили catalog.html*/
 
-/*
-.logo {
-    margin-top: 10px;
+.breadcrumbs {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
 }
 
-.page-header {
+.catalog {
     display: flex;
+    flex-direction: column;
+    
+    color: #ffffff;
 }
 
-.page-header-top {
+.catalog-controls {
     display: flex;
+    flex-wrap: wrap;
+    
+    min-height: 130px;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
 }
 
-.page-header-menu {
-    margin-top: 20px;
-    
-    outline: 2px dashed red;
-}
-
-.page-header-menu ul {
-    padding: 0;
-    margin: 0;
-    
-    list-style: none;
-}
-
-.page-header-menu li {
-    display: inline-block;
-    
-    padding: 10px 13px;
-    padding-left: 1px;
-    
+.catalog-controls-tuggle,
+.catalog-controls button {
     font-size: 16px;
     line-height: 18px;
 }
 
-.user-block {
+.catalog-controls-floor {
     display: flex;
-    justify-content: space-between;
+    width: 1146px;
+}
+
+.catalog-controls-floor:first-of-type {
+    margin-bottom: 20px;
+}
+
+.catalog-controls-item span {
+    padding-left: 15px;
+}
+
+.catalog-controls-tuggle {
+    padding: 10px 15px;
+    margin-right: 15px;
     
-    width: 260px;
-    margin-top: 20px;
-    margin-left: 358px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog-container {
+    font-size: 0;
+}
+
+.catalog-item {
+    display: inline-block;
+
+    width: 267px;
+    margin-right: 26px;
+    margin-bottom: 40px;
+
+    vertical-align: top;
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.catalog-item:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.catalog-item:nth-of-type(n+8) {
+    margin-bottom: 0;
+}
+
+
+
+/*
+Почему это не сработало?
+.pegination {
+    display: inline-block;
     
-    outline: 2px dashed red;
-}
-
-.search {
-    width: 30px;
-}
-
-.login {
-    width: 90px;
-}
-
-.basket {
-    width: 120px;
+    text-align: right;
 }
 */
+
+/*
+А почему это?
+.pegination {
+    float: right;
+}
+
+.pegination::after {
+    content: '';
+    clear: both;
+}
+*/
+
+.pegination {
+    align-self: flex-end;
+    
+    margin-top: 85px;
+    margin-bottom: 35px;
+}
 
 /*!Исользовать дополнительные стили сегда*/
 
