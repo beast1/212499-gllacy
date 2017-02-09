@@ -281,7 +281,7 @@ h3 {
     
     margin: 40px 0;
     
-    outline: 2px dashed black;
+/*    outline: 2px dashed black;*/
 }
 
 .holder-1 {
@@ -311,7 +311,7 @@ h3 {
     flex-basis: 520px;
     padding: 20px;
     
-    outline: 2px dashed red;
+/*    outline: 2px dashed red;*/
 }
 
 .holder-2 {
@@ -480,7 +480,8 @@ h3 {
 
 .catalog-controls-floor {
     display: flex;
-    width: 1146px;
+    justify-content: space-between;
+    width: 860px;
 }
 
 .catalog-controls-floor:first-of-type {
@@ -493,9 +494,54 @@ h3 {
 
 .catalog-controls-tuggle {
     padding: 10px 15px;
-    margin-right: 15px;
+/*    margin-right: 15px;*/
     
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tuggle-select {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+    width: 195px;
+    height: 40px;
+}
+
+.tuggle-range {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+    box-sizing: border-box;
+    width: 215px;
+    height: 40px;
+}
+
+.tuggle-rbtn {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    
+    box-sizing: border-box;
+    width: 415px;
+    height: 40px;
+}
+
+.tuggle-cbx {
+    display: flex;
+    justify-content: space-between;
+    
+    box-sizing: border-box;
+    width: 700px;
+}
+
+.catalog-controls-floor button {
+    align-self: flex-end;
+    
+    box-sizing: border-box;
+    height: 40px;
+    width: 145px;
 }
 
 .catalog-container {
