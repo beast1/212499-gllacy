@@ -18,6 +18,7 @@ body {
     line-height: 22px;
     color: #000000;
     font-family: "Roboto", "Arial", sans-serif;
+    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic'); /*Как лучше подключать шрифты(css или html)?*/
     font-weight: bold;
     
     background-color: #99aea2; 
@@ -58,19 +59,136 @@ body {
 /*    outline: 2px dashed red;*/
 }
 
-.page-header-menu {
-    font-size: 16px;
-    line-height: 18px;
+.page-header-menu > ul {
+    position: relative;
     
-    width: 360px;
-    margin-top: 15px;
+    display: flex;
+    justify-content: flex-start;
     
+    padding: 0;
+    margin: 0;
     
+    list-style: none;
+    
+/*    outline: 1px dashed black;*/
+}
+
+.page-header-menu > ul > li {
 /*    outline: 2px dashed red;*/
 }
 
-.page-header-menu ul {
-    font-size: 0;
+.page-header-menu > ul > li > a {
+    display: inline-block; /*Причина: Чтобы избавится от выпадания. Вопрос: Нужно ли сбрасывать пробелы в родителе?*/
+    padding: 10px 15px;
+    
+    font-size: 16px;
+    line-height: 18px;
+    
+/*    outline: 3px dashed green;*/
+}
+
+.page-header-menu > ul > li > a:hover {
+    color: #000000;
+    text-decoration: none;
+    
+    background-color: #ffffff;
+    border-radius: 50px / 50px;
+}
+
+.page-header-menu > ul > li > a:active {
+    color: #000000;
+    text-decoration: none;
+    
+    background-color: #ffffff;
+    border-radius: 50px / 50px;
+    box-shadow: inset 0 3px 3px 0 #696969;
+}
+
+/*
+.page-header-menu > ul > li > a:Находимся на странице {
+    color: #000000;
+    text-decoration: none;
+    
+    background-color: #000000;
+    border-radius: 50px / 50px;
+    box-shadow: inset 0 3px 3px 0 #d07058;
+}
+*/
+
+.sub-menu {
+    position: absolute;
+    top: 45px;
+    
+    
+    display: none;
+    
+    padding: 0;
+    margin: 0;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    
+    list-style: none;
+}
+
+.sub-menu > li > a {
+    display: block;
+    
+    padding: 10px 15px;
+    
+    text-decoration: none;
+}
+
+.sub-menu > li:nth-of-type(1) > a {
+    font-weight: bold;
+}
+
+.sub-menu > li:nth-of-type(1) {
+    margin-bottom: 1px;
+    box-shadow: 0 7px 0 -6px #d1d0ce; 
+}
+
+.page-header-menu li:hover .sub-menu {
+    display: block;
+}
+
+/*Стили состояний выпадашки.Начало*/
+
+.sub-menu > li > a:not(.btn):hover { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+    color: #000000;
+    
+    background-color: #fbded7;
+}
+
+.sub-menu > li > a:not(.btn):active { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+    color: #000000;
+    
+    background-color: #f6b5a5;
+}
+
+.sub-menu > li > a:not(.btn):active/*Нужно: добавить псевдокласс нахождения на странице.*/ { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+    color: #ffffff;
+    
+    background-color: #d07058;
+}
+
+/*Стили состояний выпадашки.Конец*/
+
+/*PAGE-HEADER-MENU V1.Начало*/
+
+/*
+.page-header-menu {
+    font-size: 16px;
+    line-height: 18px;
+    text-decoration: underline;
+    
+    width: 380px;
+    margin-top: 15px;
+}
+
+.page-header-menu > ul {
+    display: flex; 
     
     padding: 0;
     margin: 0;
@@ -78,17 +196,59 @@ body {
     list-style: none;
 }
 
-.page-header-menu li {
+.page-header-menu > li {
     font-size: 16px;
     line-height: 18px;
-    
-    display: inline-block;
-    
 }
 
-.page-header-menu a {
-    padding: 14px 7px;
+.page-header-menu > ul > li > a {
+    padding: 10px 15px;
 }
+
+.page-header-menu > ul > li:nth-of-type(1) {
+    position: relative;
+}
+
+.sub-menu {
+    width: 145px;
+    padding: 0;
+    margin: 0;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    
+    list-style: none;
+    position: absolute;
+}
+
+.sub-menu a {
+    padding: 10px 0;
+}
+*/
+
+/*Стили состояния пунктов меню.Начало*/
+
+/*
+.page-header-menu a:hover {
+    color: #000000;
+    
+    background-color: #ffffff;
+}
+*/
+
+/*PAGE-HEADER-MENU V1.Конец*/
+
+/*
+.sub-menu {
+    display: flex;
+    
+    position: absolute;
+    list-style:;
+}
+*/
+
+/*Стили состояния пунктов меню.Конец*/
 
 .user-block {
     display: flex;
@@ -183,18 +343,12 @@ body {
 .footer-copyright {
     margin-top: 20px;
     margin-bottom: 25px;
+    
+    font-size: 12px;
 }
 
 .footer-copyright p {
     margin: 0;
-}
-
-/*Старая версия футера.Начало*/
-
-.page-footer {
-    display: flex;
-    
-/*    outline: 2px dashed black;*/
 }
 
 /*Сквозные элементы*/
@@ -217,6 +371,48 @@ h3 {
     text-align: center;
 }
 
+.hidden-container { /*Стили оберток выпадашек*/
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+body:not(.page-header-menu) a:not(.btn) /*Почему всё равно действует на .page-header-menu?*/{
+    
+}
+
+/*Cтили состояния ссылок. Начало*/
+
+a:not(.btn) {
+    color: #ffffff;
+}
+
+a:not:not(.btn):hover {
+    color: #ffbc9e;
+}
+
+a:not(.btn):active {
+    color: #ffbc9e;
+}
+
+.hidden-container a:not(.btn),
+.holder-2 a:not(.btn) {
+    color: #000000;
+}
+
+.hidden-container a:not(.btn):hover,
+.holder-2 a:not(.btn):hover {
+    color: #ffbc9e;
+}
+
+.hidden-container a:not(.btn):active,
+.holder-2 a:not(.btn):active {
+    color: #ffbc9e;
+}
+
+/*Cтили состояния ссылок. Конец*/
+
 .btn {
     display: inline-block; /*Нужен ли фикс с удалением пробелов?*/
     padding: 10px 20px;
@@ -224,10 +420,28 @@ h3 {
     color: #ffffff;
     font-size: 18px;
     line-height: 24px;
-    
-    background-color: #ed5b3d;
-    border: none;
     text-decoration: none;
+/*
+    text-shadow: 
+        0 0 4px #9e4334,
+        0 2px 4px #9e4334;
+*/
+    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+        
+    background-color: #ed5b3d;
+    background-image: linear-gradient(0deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 0 #9e4334;
+}
+
+.btn:hover {
+    /*Rак зделать дополнительную прозрачность?*/
+}
+
+.btn:active {
+    box-shadow: inset 0 2px 2px 0 #9e4334;
+    background-image: linear-gradient(0deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
 }
 
 /*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
