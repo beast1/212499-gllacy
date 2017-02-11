@@ -59,7 +59,9 @@ body {
 /*    outline: 2px dashed red;*/
 }
 
-.page-header-menu > ul {
+/*.page-header-menu .menu*/
+/*.page-header-menu > ul*/
+.page-header-menu .menu {
     position: relative;
     
     display: flex;
@@ -73,11 +75,8 @@ body {
 /*    outline: 1px dashed black;*/
 }
 
-.page-header-menu > ul > li {
-/*    outline: 2px dashed red;*/
-}
-
-.page-header-menu > ul > li > a {
+/*.page-header-menu > ul > li > a*/
+.header-btn-1 {
     display: inline-block; /*Причина: Чтобы избавится от выпадания. Вопрос: Нужно ли сбрасывать пробелы в родителе?*/
     padding: 10px 15px;
     
@@ -87,7 +86,11 @@ body {
 /*    outline: 3px dashed green;*/
 }
 
-.page-header-menu > ul > li > a:hover {
+.menu a {
+    
+}
+
+.header-btn-1:hover {
     color: #000000;
     text-decoration: none;
     
@@ -95,7 +98,7 @@ body {
     border-radius: 50px / 50px;
 }
 
-.page-header-menu > ul > li > a:active {
+.header-btn-1:active {
     color: #000000;
     text-decoration: none;
     
@@ -104,23 +107,23 @@ body {
     box-shadow: inset 0 3px 3px 0 #696969;
 }
 
-/*
-.page-header-menu > ul > li > a:Находимся на странице {
-    color: #000000;
+/*.page-header-menu > ul > li > .actual*/
+.menu .actual {
+    color: #ffffff;
     text-decoration: none;
     
-    background-color: #000000;
+    background-color: #d07058;
     border-radius: 50px / 50px;
-    box-shadow: inset 0 3px 3px 0 #d07058;
 }
-*/
 
 .sub-menu {
     position: absolute;
     top: 45px;
     
-    
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+/*    display: none;*/
     
     padding: 0;
     margin: 0;
@@ -132,121 +135,55 @@ body {
     list-style: none;
 }
 
-.sub-menu > li > a {
+.sub-menu a {
     display: block;
     
     padding: 10px 15px;
     
+    color: #000000;
+    
     text-decoration: none;
 }
 
-.sub-menu > li:nth-of-type(1) > a {
+.sub-menu li:nth-of-type(1) {
     font-weight: bold;
 }
 
-.sub-menu > li:nth-of-type(1) {
+.sub-menu li:nth-of-type(1) {
     margin-bottom: 1px;
     box-shadow: 0 7px 0 -6px #d1d0ce; 
 }
 
-.page-header-menu li:hover .sub-menu {
-    display: block;
+.sub-menu-tuggle:hover .sub-menu {
+/*    display: block;*/
+    
+    opacity: 1;
+    visibility: visible;
+    
 }
 
 /*Стили состояний выпадашки.Начало*/
 
-.sub-menu > li > a:not(.btn):hover { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu a:hover { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+    
     color: #000000;
     
     background-color: #fbded7;
 }
 
-.sub-menu > li > a:not(.btn):active { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu a:active { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
     color: #000000;
     
     background-color: #f6b5a5;
 }
 
-.sub-menu > li > a:not(.btn):active/*Нужно: добавить псевдокласс нахождения на странице.*/ { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu .actual-sub { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
     color: #ffffff;
     
     background-color: #d07058;
 }
 
 /*Стили состояний выпадашки.Конец*/
-
-/*PAGE-HEADER-MENU V1.Начало*/
-
-/*
-.page-header-menu {
-    font-size: 16px;
-    line-height: 18px;
-    text-decoration: underline;
-    
-    width: 380px;
-    margin-top: 15px;
-}
-
-.page-header-menu > ul {
-    display: flex; 
-    
-    padding: 0;
-    margin: 0;
-    
-    list-style: none;
-}
-
-.page-header-menu > li {
-    font-size: 16px;
-    line-height: 18px;
-}
-
-.page-header-menu > ul > li > a {
-    padding: 10px 15px;
-}
-
-.page-header-menu > ul > li:nth-of-type(1) {
-    position: relative;
-}
-
-.sub-menu {
-    width: 145px;
-    padding: 0;
-    margin: 0;
-    
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: normal;
-    
-    list-style: none;
-    position: absolute;
-}
-
-.sub-menu a {
-    padding: 10px 0;
-}
-*/
-
-/*Стили состояния пунктов меню.Начало*/
-
-/*
-.page-header-menu a:hover {
-    color: #000000;
-    
-    background-color: #ffffff;
-}
-*/
-
-/*PAGE-HEADER-MENU V1.Конец*/
-
-/*
-.sub-menu {
-    display: flex;
-    
-    position: absolute;
-    list-style:;
-}
-*/
 
 /*Стили состояния пунктов меню.Конец*/
 
@@ -351,17 +288,17 @@ body {
     margin: 0;
 }
 
-/*Сквозные элементы*/
+/*Сквозные элементы.Начало*/
 
-h2 {
-    margin: 0; /*Можно ли так делать?*/
+.h2 {
+    margin: 0;
     
     font-size: 35px;
     line-height: 41px;
 }
 
-h3 {
-    margin: 0; /*Можно ли так делать?*/
+.h3 {
+    margin: 0;
     
     color: #ffffff;
     font-size: 16px;
@@ -378,38 +315,36 @@ h3 {
     overflow: hidden;
 }
 
-body:not(.page-header-menu) a:not(.btn) /*Почему всё равно действует на .page-header-menu?*/{
-    
-}
-
 /*Cтили состояния ссылок. Начало*/
 
-a:not(.btn) {
+a/*:not(.btn)*/ {
     color: #ffffff;
 }
 
-a:not:not(.btn):hover {
+a/*:not(.btn)*/:hover {
     color: #ffbc9e;
 }
 
-a:not(.btn):active {
+a/*:not(.btn)*/:active {
     color: #ffbc9e;
 }
 
-.hidden-container a:not(.btn),
-.holder-2 a:not(.btn) {
+/*
+.hidden-container a,
+.holder-2 a {
     color: #000000;
 }
 
-.hidden-container a:not(.btn):hover,
-.holder-2 a:not(.btn):hover {
+.hidden-container a:hover,
+.holder-2 a:hover {
     color: #ffbc9e;
 }
 
-.hidden-container a:not(.btn):active,
-.holder-2 a:not(.btn):active {
+.hidden-container a:active,
+.holder-2 a:active {
     color: #ffbc9e;
 }
+*/
 
 /*Cтили состояния ссылок. Конец*/
 
@@ -437,12 +372,98 @@ a:not(.btn):active {
 
 .btn:hover {
     /*Rак зделать дополнительную прозрачность?*/
+    color: #ffffff;
 }
 
 .btn:active {
     box-shadow: inset 0 2px 2px 0 #9e4334;
     background-image: linear-gradient(0deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
 }
+
+/*Иконки товаров*/
+
+.popular-item img,
+.catalog-item img {
+    border-radius: 50%;
+}
+
+.price {
+    
+}
+
+.popular-item-hidden-btn {
+    position: absolute;
+    
+    display: flex;
+    justify-content: space-around;
+    
+    width: 267px;
+    margin-top: 10px;
+    
+    opacity: 0;
+    visibility: hidden;
+    
+/*    transition: 0.2s;*/
+}
+
+/*
+.popular-item-hidden-btn {
+    display: none;
+}
+*/
+
+.popular-item:hover .popular-item-hidden-btn,
+.catalog-item:hover .popular-item-hidden-btn {
+    position: absolute;
+    
+    display: flex;
+    justify-content: space-around;
+    
+    width: 267px;
+    margin-top: 10px;
+/*    margin-bottom: 20px;*/
+    
+    opacity: 1;
+    visibility: visible;
+}
+
+.popular-item:hover,
+.catalog-item:hover {
+    position: relative;
+    z-index: 10;
+    
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.popular-item:hover {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 70px;
+    
+    margin-top: -5px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -70px;
+}
+
+.catalog-item:hover {
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+    
+    margin-top: -5px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -30px;
+}
+
+/*Bконки товаров.Конец*/
+
+/*Crвозные элементы.Конец*/
 
 /*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
 
@@ -589,19 +610,6 @@ a:not(.btn):active {
     opacity: 0.3;
 }
 */
-
-.popular-item-hidden-btn {
-    display: none;
-}
-
-.popular-item:hover .popular-item-hidden-btn {
-    display: flex;
-    justify-content: space-around;
-    
-    width: 267px;
-    
-    position: absolute;
-}
 
 .features {  
     padding: 30px 20px;
@@ -759,6 +767,33 @@ a:not(.btn):active {
 }
 
 .catalog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.catalog-item {
+    width: 267px;
+    
+    margin-bottom: 40px;
+    
+/*
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 75px;
+    
+    margin-top: -5px;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -75px;
+*/
+}
+
+
+
+/* Список товаров V1
+.catalog-container {
     font-size: 0;
 }
 
@@ -781,6 +816,7 @@ a:not(.btn):active {
 .catalog-item:nth-of-type(n+8) {
     margin-bottom: 0;
 }
+*/
 
 
 
