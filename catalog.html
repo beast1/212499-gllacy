@@ -13,7 +13,7 @@
         <div class="container">
             <div class="page-header-top">
                 <div class="logo">
-                    <img src="img/logo.png" alt="GllacyShop" width="150px" height="60px">
+                    <a href="index.html"><img src="img/logo.png" alt="GllacyShop" width="150px" height="60px"></a>
                 </div>
                 <nav class="page-header-menu">
                     <ul class="menu">
@@ -33,50 +33,52 @@
                 </nav>
                 <div class="user-block">
                     <div class="user-block-controls">
-                        <button class="search header-btn" type="button">Поиск</button>
-                        <div class="hidden-container hidden">
-                            <form action="#" method="get">
+                        <div class="search">
+                            <button class="search-btn header-btn-2" type="button">Поиск</button>
+                            <form class="search-pop-up hidden-container" action="#" method="get">
                                 <input type="text" name="search" placeholder="Что ищем?">
                             </form>
                         </div>
-                        <button class="login header-btn" type="button">Вход</button>
-                        <div class="hidden-container hidden">
-                            <form action="#" method="post">
+                        <div class="login">
+                            <button class="login-btn header-btn-2" type="button">Вход</button>
+                            <form class="login-pop-up hidden-container" action="#" method="post">
                                 <input type="email" name="login-email" placeholder="Электронная почта">
                                 <input type="password" name="login-password" placeholder="Пароль">
-                                <button type="submit" name="login-btn">Войти</button>
+                                <button class="btn" type="submit" name="login-btn">Войти</button>
                                 <a href="#">Забыли пароль?</a>
                                 <a href="#">Новая регистрация</a>
                             </form>
                         </div>
-                        <button class="basket header-btn" type="button">2 товара</button>
-                        <div class="hidden-container hidden">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="cross-it-out"></button>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="img/preview-1.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                                    </td>
-                                    <td><a href="#">Пломбир с апельсиновым джемом</a></td>
-                                    <td>1,5 кг х <span class="disabled">200 руб.</span></td>
-                                    <td>300 руб.</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button type="button" class="cross-it-out"></button>
-                                    </td>
-                                    <td>
-                                        <a href="#"><img src="img/preview-2.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                                    </td>
-                                    <td><a href="#">Клубничный пломбир с присыпкой из белого шоколада</a></td>
-                                    <td>1,5 кг х <span class="disabled">300 руб.</span></td>
-                                    <td>450 руб.</td>
-                                </tr>
-                            </table>
-                            <span>Итого: 750 руб.</span>
-                            <a class="btn" href="#">Оформить заказ</a>
+                        <div class="basket">
+                            <button class="basket-btn header-btn-2" type="button">2 товара</button>
+                            <div class="basket-pop-up hidden-container">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="cross-it-out"></button>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="img/preview-1.jpg" alt="Иконка товара" width="34px" height="34px"></a>
+                                        </td>
+                                        <td><a href="#">Пломбир с апельсиновым джемом</a></td>
+                                        <td>1,5 кг х <span class="disabled">200 руб.</span></td>
+                                        <td>300 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button type="button" class="cross-it-out"></button>
+                                        </td>
+                                        <td>
+                                            <a href="#"><img src="img/preview-2.jpg" alt="Иконка товара" width="34px" height="34px"></a>
+                                        </td>
+                                        <td><a href="#">Клубничный пломбир с присыпкой из белого шоколада</a></td>
+                                        <td>1,5 кг х <span class="disabled">300 руб.</span></td>
+                                        <td>450 руб.</td>
+                                    </tr>
+                                </table>
+                                <span>Итого: 750 руб.</span>
+                                <a class="btn" href="#">Оформить заказ</a>
+                            </div>
                         </div>
                     </div>
                     <div class="user-block-contacts">
@@ -136,20 +138,30 @@
                     <div class="catalog-controls-item">
                         <span>Наполнители:</span>
                         <div class="catalog-controls-tuggle tuggle-cbx">
-                            <input type="checkbox" name="chocolate" id="cbx-1" checked>
-                            <label for="cbx-1">Шоколадные</label>
+                            <div class="tuggle-cbx-item">
+                                <input type="checkbox" name="chocolate" id="cbx-1" checked>
+                                <label for="cbx-1">Шоколадные</label>
+                            </div>
 
-                            <input type="checkbox" name="shugar" id="cbx-2" checked>
-                            <label for="cbx-2">Сахарные присыпки</label>
+                            <div class="tuggle-cbx-item">
+                                <input type="checkbox" name="shugar" id="cbx-2" checked>
+                                <label for="cbx-2">Сахарные присыпки</label>
+                            </div>
 
-                            <input type="checkbox" name="fruits" id="cbx-3">
-                            <label for="cbx-3">Фрукты</label>
+                            <div class="tuggle-cbx-item">
+                                <input type="checkbox" name="fruits" id="cbx-3">
+                                <label for="cbx-3">Фрукты</label>
+                            </div>
 
-                            <input type="checkbox" name="syrup" id="cbx-4">
-                            <label for="cbx-4">Сиропы</label>
+                            <div class="tuggle-cbx-item">
+                                <input type="checkbox" name="syrup" id="cbx-4">
+                                <label for="cbx-4">Сиропы</label>
+                            </div>
 
-                            <input type="checkbox" name="jam" id="cbx-5">
-                            <label for="cbx-5">Джемы</label>
+                            <div class="tuggle-cbx-item">
+                                <input type="checkbox" name="jam" id="cbx-5">
+                                <label for="cbx-5">Джемы</label>
+                            </div>
                         </div>
                     </div>
                     <button class="catalog-controls-tuggle" type="submit">Применить</button>
@@ -279,10 +291,10 @@
     <footer class="page-footer">
         <div class="container">
             <div class="footer-social">
-                <a class="social-btn" href="#">Твиттер</a>
-                <a class="social-btn" href="#">Инстаграмм</a>
-                <a class="social-btn" href="#">Фейсбук</a>
-                <a class="social-btn" href="#">Вконтакте</a>
+                <a class="social-btn social-btn-twitter" href="#">Твиттер</a>
+                <a class="social-btn social-btn-instagram" href="#">Инстаграмм</a>
+                <a class="social-btn social-btn-facebook" href="#">Фейсбук</a>
+                <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
             </div>
             <nav class="footer-menu">
                 <ul>
@@ -296,7 +308,7 @@
             </nav>
             <div class="footer-copyright">
                 <a href="htmlacademy.ru"><img src="img/logo-academy.png" alt="Логотип академии" width="108px" height="38px"></a>
-                <p>Сделано в<a href="#">HTML Academy</a> &#169; 2017</p>
+                <p>Сделано в <a href="#">HTML Academy</a> &#169; 2017</p>
             </div>
         </div>
     </footer>

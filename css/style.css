@@ -21,7 +21,7 @@ body {
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic'); /*Как лучше подключать шрифты(css или html)?*/
     font-weight: bold;
     
-    background-color: #99aea2; 
+    background-color: #849d8f;
 }
 
 .container {
@@ -57,6 +57,10 @@ body {
     margin-right: 10px;
     
 /*    outline: 2px dashed red;*/
+}
+
+.page-header-menu {
+    margin-top: 10px;
 }
 
 /*.page-header-menu .menu*/
@@ -118,21 +122,20 @@ body {
 
 .sub-menu {
     position: absolute;
-    top: 45px;
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease-in-out;
-/*    display: none;*/
     
     padding: 0;
     margin: 0;
+    margin-top: 5px;
     
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
     
+    opacity: 0;
+    visibility: hidden;
     list-style: none;
+    
+    transition: all 0.3s ease-in-out;
 }
 
 .sub-menu a {
@@ -164,20 +167,20 @@ body {
 
 /*Стили состояний выпадашки.Начало*/
 
-.sub-menu a:hover { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu a:hover {
     
     color: #000000;
     
     background-color: #fbded7;
 }
 
-.sub-menu a:active { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu a:active {
     color: #000000;
     
     background-color: #f6b5a5;
 }
 
-.sub-menu .actual-sub { /*Лишний псевдокласс, чтобы перебить по специфичности общие стили ссылок. Можно ли?*/
+.sub-menu .actual-sub {
     color: #ffffff;
     
     background-color: #d07058;
@@ -189,35 +192,230 @@ body {
 
 .user-block {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+/*    flex-wrap: wrap;*/
+    flex-direction: column;
+/*    align-content: flex-start;*/
+/*    justify-content: flex-end;*/
     
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
     
     margin-left: auto;
-    padding-top: 15px;
+    margin-top: 10px;
     width: 265px;
     
 /*    outline: 2px dashed red;*/
 }
 
 .user-block-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 265px;
+}
+
+.user-block-controls a:not(.btn) {
+    color: #000000;
+}
+
+.header-btn-2 {
+    position: relative;
+    
+    padding: 11px 15px; /*Чтобы компенсировать разницу в line-height*/
+    padding-left: 40px;
+    border-width: 0;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    
+    border-radius: 50px / 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-btn {
+    padding: 11px 20px;
     font-size: 0;
 }
 
-.header-btn {
-    display: inline-block;
+.header-btn-2::before {
+    position: absolute;
+    left: 15px;
+    top: 9px;
     
-    padding: 8px 0;
-    margin-right: 10px;
+    content: '';
+    
+    width: 21px;
+    height: 20px;
+    
+/*    outline: 1px dashed black;*/
+    background-image: url("../img/sprytes/spritesheet-3.png");
 }
 
-.header-btn:last-of-type {
-    margin-right: 0;
+/*
+.search-btn::before {
+    width: 200px;
+    height: 200px;
+}
+*/
+
+.search-btn::before {
+    left: 12px;
+    
+    background-position: 0px -376px;
 }
 
+.login-btn::before {
+    background-position: 0px -319px;
+}
+
+.basket-btn::before {
+    background-position: -0px 0px;
+}
+
+.search-btn:hover::before {
+    left: 12px;
+    
+    background-position: -22px -376px;
+}
+
+.login-btn:hover::before {
+    background-position: 0px -348px;
+}
+
+.basket-btn:hover::before {
+    background-position: 0px -30px;
+}
+
+.search,
+.login,
+.basket {
+    position: relative;
+}
+
+.search-btn:hover,
+.login-btn:hover,
+.basket-btn:hover {
+    position: relative;
+    
+    color: #000000;
+    
+    background-color: #ffffff;
+}
+
+.search-pop-up {
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    
+    box-sizing: border-box;
+    width: 340px;
+    padding: 20px;
+    margin-top: 5px;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.login-pop-up {
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    
+    box-sizing: border-box;
+    width: 280px;
+    height: 215px;
+    padding: 20px;
+    margin-top: 5px;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.login-pop-up input {
+    margin-bottom: 20px;
+}
+
+.login-pop-up button {
+    display: block;
+    float: left;
+}
+
+.login-pop-up a {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.basket-pop-up {
+    position: absolute;
+    right: 0;
+    z-index: 20;
+    
+    box-sizing: border-box;
+    width: 640px;
+    padding: 20px;
+    margin-top: 5px;
+    
+    color: #000000;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.3s ease-in-out;
+}
+
+.basket-pop-up table {
+    border-bottom: 1px solid #cacac7;
+}
+
+.basket-pop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.basket-pop-up span:not(.disabled) {
+    margin: 10px 0;
+    
+    font-weight: bold;
+}
+
+.basket-pop-up a:not(.btn):hover {
+    color: #ffbc9e;
+}
+
+.search:hover .search-pop-up,
+.login:hover .login-pop-up,
+.basket:hover .basket-pop-up {
+    visibility: visible;
+    opacity: 1;
+}
+
+.user-block-contacts {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    
+    font-weight: bold;
+}
+
+.user-block-contacts span {
+    position: absolute;
+    bottom: -15px;
+    
+    font-size: 22px;
+    line-height: 24px;
+}
+
+/*Контакты В1
 .user-block-contacts {
     margin-top: 18px;
     width: 175px;
@@ -237,6 +435,7 @@ body {
     
     position: absolute;
 }
+*/
 
 /*Общие стили.Футер*/ 
 
@@ -261,6 +460,33 @@ body {
     margin-bottom: 30px;
 }
 
+.social-btn {
+    width: 30px;
+    height: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.7);
+    
+    font-size: 0;
+    
+    border-radius: 50%;
+}
+
+.social-btn-twitter {
+    background: url("../img/sprytes/spritesheet-3.png") no-repeat -1px -489px;
+    background-clip: content-box;
+}
+.social-btn-instagram {
+    background: url("../img/sprytes/spritesheet-3.png") no-repeat -1px -447px;
+    background-clip: content-box;
+}
+.social-btn-facebook {
+    background: url("../img/sprytes/spritesheet-3.png") no-repeat -1px -405px;
+    background-clip: content-box;
+}
+.social-btn-vk {
+    background: url("../img/sprytes/spritesheet-3.png") no-repeat -1px -531px;
+    background-clip: content-box;
+}
+
 .footer-menu {
     display: flex;
     justify-content: space-between;
@@ -268,6 +494,24 @@ body {
     flex-basis: 310px;
     margin-top: 35px;
     margin-bottom: 30px;
+}
+
+.love {
+    position: relative;
+}
+
+.love::before {
+    content: "";
+    left: -20px;
+    top: 2px;
+    
+    position: absolute;
+    
+    width: 20px;
+    height: 15px;
+    
+    background-image: url("../img/sprytes/spritesheet-3.png");
+    background-position: 0px -296px;
 }
 
 .footer-menu ul {
@@ -282,6 +526,7 @@ body {
     margin-bottom: 25px;
     
     font-size: 12px;
+    line-height: 18px;
 }
 
 .footer-copyright p {
@@ -313,6 +558,24 @@ body {
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
     overflow: hidden;
+}
+
+.hidden-container input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: normal;
+    border: 1px solid #d3d3d2;
+    
+/*    box-shadow: 0 0 0 1px #d3d3d2;*/
+    border-radius: 5px;
+}
+
+.hidden-container input:hover {
+/*    box-shadow: 0 0 0 1px #c7c6c5;*/
 }
 
 /*Cтили состояния ссылок. Начало*/
@@ -385,10 +648,6 @@ a/*:not(.btn)*/:active {
 .popular-item img,
 .catalog-item img {
     border-radius: 50%;
-}
-
-.price {
-    
 }
 
 .popular-item-hidden-btn {
@@ -533,18 +792,28 @@ a/*:not(.btn)*/:active {
     flex-direction: column;
 }
 
-.holder-1 .fill span {
-    margin-top: 25px;
-    margin-bottom: 50px;
+.holder-1 .fill:nth-of-type(1) {
+    background: #560715 url("../img/background-fruit-short-3.jpg") no-repeat;
 }
 
-.holder-1 .fill .btn {
+.holder-1 .fill:nth-of-type(2) {
+    background: #40261a url("../img/background-chocolad-short-3.jpg") no-repeat;
+}
+
+.holder-1 span {
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+
+.holder-1 .btn {
     align-self: flex-end;
 }
 
 .fill {
     flex-basis: 520px;
     padding: 20px;
+    
+    border-radius: 15px;
     
 /*    outline: 2px dashed red;*/
 }
@@ -559,6 +828,18 @@ a/*:not(.btn)*/:active {
     background-color: #ffffff;
 }
 
+.holder-2 .fill:nth-of-type(1) {
+    background: #ffffff url("../img/background-ummy-short-3.jpg") no-repeat;
+}
+
+.holder-2 .fill:nth-of-type(2) {
+    background-color: #f8f7f4;
+/*    border: 5px solid red;*/
+    border-width: 5px; 
+/*    border-color: red;*/
+    border-image: repeating-linear-gradient(to right bottom, transparent 5px, #fe9e90 5px, #fe9e90 10px, transparent 10px, transparent 15px, #92cdff 15px, #92cdff 20px, transparent 20px, transparent 25px);
+}
+
 .holder-2 b {
     display: block;
 }
@@ -570,6 +851,29 @@ a/*:not(.btn)*/:active {
     color: #000000;
 }
 
+.holder-2 p {
+    margin-bottom: 40px;
+}
+
+.form-spam {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.form-spam input {
+    width: 370px;
+    padding: 10px;
+    margin-right: 10px;
+    border-width: 1px;
+    
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    
+    border-color: #d3d3d2;
+    border-radius: 5px;
+}
+
 /*
 .font-black {
     color: #000000;
@@ -579,6 +883,7 @@ a/*:not(.btn)*/:active {
 .popular {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 40px;
     
     color: #ffffff;
     
@@ -586,11 +891,48 @@ a/*:not(.btn)*/:active {
 }
 
 .popular-item {
-    width: 267px;
-    
     position: relative;
     
-/*    outline: 2px dashed red;*/
+    width: 267px;
+}
+
+.index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 60px;
+    height: 60px;
+    
+    font-size: 0;
+    
+    background: url("../img/sprytes/spritesheet-3.png");
+    background-position: 0 -572px;
+    border-radius: 50%;
+}
+
+.popular-item:hover .index, 
+.catalog-item:hover .index {
+    top: 5px;
+    left: 15px;
+}
+
+.price {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    
+    font-size: 45px;
+    line-height: 45px;
+    font-weight: bold;
+    
+    text-shadow: 0.5px 0.866px 3px rgba(49, 50, 53, 0.5);
+}
+
+.popular-item:hover .price, 
+.catalog-item:hover .price {
+    top: 205px;
+    left: 15px;
 }
 
 /*
@@ -613,6 +955,10 @@ a/*:not(.btn)*/:active {
 
 .features {  
     padding: 30px 20px;
+    
+    background: #eee0c8 url("../img/background-cross-short-2.jpg") no-repeat;
+    
+    border-radius: 15px;
 }
 
 .features-promo {
@@ -633,13 +979,45 @@ a/*:not(.btn)*/:active {
 }
 
 .features-item {
+    position: relative;
+    
     width: 480px;
-    padding-left: 60px;
+    margin-left: 60px;
     
     font-size: 16px;
     line-height: 22px;
     
     font-weight: normal;
+}
+
+.features-item::before {
+    position: absolute;
+    left: -56px;
+    top: -18px;
+    
+    content: "";
+    
+    width: 50px;
+    height: 50px;
+    
+/*    outline: 2px dashed black;*/
+    background: url("../img/sprytes/spritesheet-3.png");
+}
+
+.features-item:nth-of-type(1)::before {
+    background-position: 0 -60px;
+}
+
+.features-item:nth-of-type(2)::before {
+    background-position: 0 -179px;
+}
+
+.features-item:nth-of-type(3)::before {
+    background-position: 0 -119px;
+}
+
+.features-item:nth-of-type(4)::before {
+    background-position: 0 -235px;
 }
 
 .features-item p {
@@ -653,6 +1031,10 @@ a/*:not(.btn)*/:active {
 }
 
 .contacts {
+    position: absolute;
+    top: 65px;
+    right: -27px;/*Последствия сомнительного костыля*/
+    
     width: 250px;
     padding: 25px;
     
@@ -660,10 +1042,148 @@ a/*:not(.btn)*/:active {
     line-height: 20px;
     font-weight: normal;
     
-    position: absolute;
-    top: 65px;
-    right: 0;
     background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.contacts .btn {
+    box-sizing: border-box;
+    width: 100%;
+    
+    text-align: center;
+}
+
+.modal-feedback {
+    position: fixed;
+    top: 0;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    
+    width: 455px;
+    min-height: 425px;
+    padding: 25px;
+    margin-left: -257.5px;
+    margin-top: -237.5px;
+    
+    
+    background-color: #f8f7f4;
+    border-radius: 10px;
+}
+
+.modal-exit {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    
+    width: 25px;
+    height: 22px;
+    border: none;
+    
+    font-size: 0;
+    
+    background-color: transparent;
+}
+
+.modal-exit::before,
+.modal-exit::after {
+    content: '';
+    
+    position: absolute;
+    right: 0;
+    
+    height: 3px;
+    width: 25px;
+    
+    background-color: #000000;
+}
+
+.modal-exit::before {
+    transform: rotate(45deg);
+}
+
+.modal-exit::after {
+    transform: rotate(-45deg);
+}
+
+/*
+.modal-exit::before {
+    content: '';
+    position: absolute;
+    
+    width: 22px;
+    height: 22px;
+    
+    border-left: 2px solid #000000; 
+    
+    transform: translate(-4px, -3px) rotate(45deg);
+}
+
+.modal-exit::after {
+    content: '';
+    position: absolute;
+    
+    width: 22px;
+    height: 22px;
+    
+    border-left: 2px solid #000000; 
+    
+    transform: translate(-4px, -18px) rotate(-45deg);
+}
+*/
+
+/* Не видит элемент
+.modal-exit::before {
+    content: "";
+    
+    height: 20px;
+    width: 20px;
+    border-bottom: 2px solid #000000;
+    
+    background-color: #000000;
+}
+*/
+
+.modal-feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-feedback-form input,
+.modal-feedback-form textarea {
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border: 1px solid #d3d3d2;
+    
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    
+    border-radius: 5px;
+}
+
+.modal-feedback span {
+    display: block;
+    
+    margin-bottom: 25px;
+    
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 500;
+}
+
+.modal-feedback-form input {
+    width: 270px;
+    
+    margin-bottom: 20px;
+}
+
+.modal-feedback-form textarea {
+    margin-bottom: 25px;
+}
+
+.modal-feedback-form .btn {
+    align-self: flex-end;
 }
 
 /*Cтили catalog.html*/
@@ -672,6 +1192,14 @@ a/*:not(.btn)*/:active {
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
+/*    word-spacing: 20px;*/
+}
+
+.breadcrumbs a:not(:last-of-type)::after {
+    content: "»";
+    
+    display: inline-block;
+    margin: 0 5px;
 }
 
 .catalog {
@@ -698,6 +1226,15 @@ a/*:not(.btn)*/:active {
 .catalog-controls button {
     font-size: 16px;
     line-height: 18px;
+    font-weight: 500;
+    
+    border-radius: 20px;
+}
+
+.catalog-controls button {
+    color: #ffffff;
+    
+    border: 2px solid #ffffff;
 }
 
 .catalog-controls-floor {
@@ -750,6 +1287,37 @@ a/*:not(.btn)*/:active {
     height: 40px;
 }
 
+.tuggle-rbtn input {
+    display: none;
+}
+
+.tuggle-rbtn label {
+    position: relative;
+    margin-left: 35px;
+}
+
+.tuggle-rbtn label::before {
+    content:"";
+    
+    position: absolute;
+    left: -30px;
+    top: -1px;
+    
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 4px solid transparent;
+    
+    box-shadow: 0 0 0 1px #ffffff;
+    border-radius: 50%;
+}
+
+input[type~="radio"]:checked + label::before {
+    background-color: #ffffff;
+    background-clip: content-box;
+}
+
+
 .tuggle-cbx {
     display: flex;
     justify-content: space-between;
@@ -757,6 +1325,60 @@ a/*:not(.btn)*/:active {
     box-sizing: border-box;
     width: 700px;
 }
+
+/*В разработке(Пока успешно)*/
+.tuggle-cbx input {
+    display: none;
+}
+
+.tuggle-cbx label {
+    position: relative;
+    margin-left: 35px;
+}
+
+.tuggle-cbx label::before {
+    content:"";
+    
+    position: absolute;
+    left: -35px;
+    top: -3px;
+    
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    
+    border-radius: 5px;
+}
+
+/*Оживляяем псевдо-чек-боксы. Начало*/
+
+input[type~="checkbox"]:checked + label::after {
+    content: "";
+    
+    position: absolute;
+    left: -31.5px;
+    top: 1px;
+    
+    width: 12px;
+    height: 6px;
+    border-left: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    
+    transform: rotate(-45deg);
+}
+
+/*Оживляяем псевдо-чек-боксы. Конец*/
+
+/*Стили состояний чек-боксов. Начало*/
+
+/*Нет реакции
+.tuggle-cbx-item:hover ~ label::before {
+    border: 3px solid #ffffff;
+}
+*/
+
+/*Стили состояний чек-боксов. Конец*/
 
 .catalog-controls-floor button {
     align-self: flex-end;
@@ -773,6 +1395,7 @@ a/*:not(.btn)*/:active {
 }
 
 .catalog-item {
+    position: relative;
     width: 267px;
     
     margin-bottom: 40px;
@@ -842,12 +1465,109 @@ a/*:not(.btn)*/:active {
 */
 
 .pegination {
+    display: flex;
+    justify-content: space-between;
     align-self: flex-end;
-    
+    width: 190px;
     margin-top: 85px;
     margin-bottom: 35px;
+    
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
 }
 
-/*!Исользовать дополнительные стили сегда*/
+.pegination a {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    padding: 4px 8px;
+    
+    text-align: center;
+    vertical-align: center;
+    text-decoration: none;
+}
 
+.pegination .next, 
+.pegination .prev {
+    position: relative;
+/*    outline: 2px dashed black;*/
+}
 
+.pegination .next::before {
+    content: '';
+    
+    position: absolute;
+    
+    width: 8px;
+    height: 8px;
+    
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    
+    transform: translate(-7px, 3px) rotate(225deg);
+}
+
+.pegination .prev::before {
+    content: '';
+    
+    position: absolute;
+    
+    width: 8px;
+    height: 8px;
+    
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    
+    transform: translate(-4px, 3px) rotate(45deg);
+}
+
+.pegination a:hover {
+    color: #ffffff;
+    
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+}
+
+.peginaion a:active {
+    color: #000000;
+    
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.pegination .disabled {
+    opacity: 0.3;
+}
+
+.pegination .active {
+    color: #000000;
+    
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+/*
+1. Исользовать дополнительные стили для сеток всегда.
+2. Не использовать общие стили.
+3. Создать иерархию классов.
+*/
+
+/*
+Заметки:
+1. Строка 190: Разобрать отличия align-content и align-item.
+2. 574: Уточнить свойство background. Растянуть фон на всю ширину; Высота блока превышает макет на 20рх. Увеличить имг или уменьшить блок?
+3. 614: Как доставать градиенты из ФШ? Вебинар по ФШ.
+4. 695: Не отображается картинка фона.
+5. 1013: Не могу отцентровать номер страницы.
+6. 975: Нет реакции на хувер
+7. 865: Не видит псевдоэлемент
+9. 290: Выровнять ссылки
+10. 460: Сделать обводку тенями, чтобы не влиять на размеры. Неадекватное отображение.
+11. 1336: Не работает активный псевдокласс пегинатора.
+12. 750: Перепройти курс по рамкам-изображениям
+13. : Перенастроить спрайты
+14. 990: Cетка позиционированием локайшн
+15. 1200: Как стилизовать форму-выпадашку?
+16. 1000: Текст ареа не наследует шрифт
+*/

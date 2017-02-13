@@ -16,9 +16,9 @@
                     <img src="img/logo.png" alt="GllacyShop" width="150px" height="60px">
                 </div>
                 <nav class="page-header-menu">
-                    <ul>
-                        <li>
-                            <a href="catalog.html">Каталог</a>
+                    <ul class="menu">
+                        <li class="sub-menu-tuggle">
+                            <a class="header-btn-1" href="catalog.html">Каталог</a>
                             <ul class="sub-menu hidden-container">
                                 <li><a href="#">Новинки</a></li>
                                 <li><a href="catalog.html">Сливочное</a></li>
@@ -27,29 +27,31 @@
                                 <li><a href="#">Мелорин</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Доставка и оплата</a></li>
-                        <li><a href="#">О компании</a></li>
+                        <li><a class="header-btn-1" href="#">Доставка и оплата</a></li>
+                        <li><a class="header-btn-1" href="#">О компании</a></li>
                     </ul>
                 </nav>
                 <div class="user-block">
                     <div class="user-block-controls">
-                        <button class="search header-btn" type="button">Поиск</button>
-                        <div class="hidden-container hidden">
-                            <form action="#" method="get">
+                        <div class="search">
+                            <button class="search-btn header-btn-2" type="button">Поиск</button>
+                            <form class="search-pop-up hidden-container" action="#" method="get">
                                 <input type="text" name="search" placeholder="Что ищем?">
                             </form>
                         </div>
-                        <button class="login header-btn" type="button">Вход</button>
-                        <div class="hidden-container hidden">
-                            <form action="#" method="post">
+                        <div class="login">
+                            <button class="login-btn header-btn-2" type="button">Вход</button>
+                            <form class="login-pop-up hidden-container" action="#" method="post">
                                 <input type="email" name="login-email" placeholder="Электронная почта">
                                 <input type="password" name="login-password" placeholder="Пароль">
-                                <button type="submit" name="login-btn">Войти</button>
+                                <button class="btn" type="submit" name="login-btn">Войти</button>
                                 <a href="#">Забыли пароль?</a>
                                 <a href="#">Новая регистрация</a>
                             </form>
                         </div>
-                        <button class="basket header-btn" type="button">Пусто</button>
+                        <div class="basket">
+                            <button class="basket-btn header-btn-2" type="button">Пусто</button>
+                        </div>
                     </div>
                     <div class="user-block-contacts">
                         <p>С 10 до 20, ежедневно</p>
@@ -101,19 +103,17 @@
         </div>
         <div class="popular">
             <div class="popular-item">
-<!--                <div class="popular-item-hidden">-->
                     <img src="img/preview-1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой" width="267px" height="267px">
-                    <b class="index">Хит</b>
+                    <div class="index">Хит</div>
                     <b class="price">310&#8381;/кг</b>
                     <h3 class="h3">Сливочное с апельсиновым джемом и цитрусовой стружкой</h3>
                     <div class="popular-item-hidden-btn">
                         <a class="btn" href="#">Быстрый просмотр</a>
                     </div>
-<!--                </div>-->
             </div>
             <div class="popular-item">
                 <img src="img/preview-2.jpg" alt="Сливочно-кофейное с кусочками шоколада" width="267px" height="267px">
-                <b class="index">Хит</b>
+                <div class="index">Хит</div>
                 <b class="price">380&#8381;/кг</b>
                 <h3 class="h3">Сливочно-кофейное с кусочками шоколада</h3>
                 <div class="popular-item-hidden-btn">
@@ -122,7 +122,7 @@
             </div>
             <div class="popular-item">
                 <img src="img/preview-3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада" width="267px" height="267px">
-                <b class="index">Хит</b>
+                <div class="index">Хит</div>
                 <b class="price">355&#8381;/кг</b>
                 <h3 class="h3">Сливочно-клубничное с присыпкой из белого шоколада</h3>
                 <div class="popular-item-hidden-btn">
@@ -131,7 +131,7 @@
             </div>
             <div class="popular-item">
                 <img src="img/preview-4.jpg" alt="Сливочное крем-брюле с карамельной подливкой" width="267px" height="267px">
-                <b class="index">Хит</b>
+                <div class="index">Хит</div>
                 <b class="price">415&#8381;/кг</b>
                 <h3 class="h3">Сливочное крем-брюле с карамельной подливкой</h3>
                 <div class="popular-item-hidden-btn">
@@ -165,7 +165,7 @@
             </div>
             <div class="fill">
                 <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
-                <form action="#" method="post">
+                <form class="form-spam" action="#" method="post">
                     <input type="email" name="email" id="subscribe" placeholder="Электронная почта">
 <!--                    <label for="subscribe"></label>-->
                     <button class="btn" type="submit" name="subscribe-btn">Отправить</button>
@@ -173,7 +173,7 @@
             </div>
         </div>
         <div class="location">
-            <img src="img/map-short.jpg" alt="Карта" width="1200px" height="430px">
+            <img src="img/map-pin-short.jpg" alt="Карта" width="1200px" height="430px">
             <div class="contacts">
                 <p>
                     Адрес главного офиса и офлайн магазина:<br>
@@ -199,10 +199,10 @@
     <footer class="page-footer">
         <div class="container">
             <div class="footer-social">
-                <a class="social-btn" href="#">Твиттер</a>
-                <a class="social-btn" href="#">Инстаграмм</a>
-                <a class="social-btn" href="#">Фейсбук</a>
-                <a class="social-btn" href="#">Вконтакте</a>
+                <a class="social-btn social-btn-twitter" href="#">Твиттер</a>
+                <a class="social-btn social-btn-instagram" href="#">Инстаграмм</a>
+                <a class="social-btn social-btn-facebook" href="#">Фейсбук</a>
+                <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
             </div>
             <nav class="footer-menu">
                 <ul>
@@ -216,10 +216,20 @@
             </nav>
             <div class="footer-copyright">
                 <a href="htmlacademy.ru"><img src="img/logo-academy.png" alt="Логотип академии" width="108px" height="38px"></a>
-                <p>Сделано в<a href="#">HTML Academy</a> &#169; 2017</p>
+                <p>Сделано в <a href="#">HTML Academy</a> &#169; 2017</p>
             </div>
         </div>
     </footer>
+    <div class="modal-feedback hidden">
+        <button class="modal-exit" type="button">Закрыть</button>
+        <span>Мы обязательно вам ответим!</span>
+        <form class="modal-feedback-form" action="#" method="post">
+            <input type="text" name="client" placeholder="Как вас зовут?">
+            <input type="email" name="email" placeholder="Ваша почта для ответа?">
+            <textarea rows="6" cols="40" placeholder="Напишите что-нибудь..."></textarea>
+            <button class="btn" type="submit" name="feedback-btn">Отправить</button>
+        </form>
+    </div>
 </body>
 
 </html>
