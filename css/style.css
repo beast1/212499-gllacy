@@ -79,12 +79,15 @@ input[name="slider-toggle"] {
     border: 3px solid #ffffff;
     
     border-radius: 50%;
+    cursor: pointer;
 }
 
 #rbtn-1:checked ~ .site-wrapper label[for="rbtn-1"],
 #rbtn-2:checked ~ .site-wrapper label[for="rbtn-2"],
 #rbtn-3:checked ~ .site-wrapper label[for="rbtn-3"] {
     background-color: #ffffff;
+    
+    cursor: context-menu;
 }
 
 label[for="rbtn-1"]:hover,
@@ -1061,12 +1064,35 @@ a:active {
     background: #ffffff url("../img/background-ummy-short-3.jpg") no-repeat;
 }
 
+/*
 .holder-2 .fill:nth-of-type(2) {
     background-color: #f8f7f4;
-/*    border: 5px solid red;*/
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+    border-width: 5px;
+    border-color: red;
+    border-style: solid;
+    border: 5px solid red;
     border-width: 5px; 
-/*    border-color: red;*/
-    border-image: repeating-linear-gradient(to right bottom, transparent 5px, #fe9e90 5px, #fe9e90 10px, transparent 10px, transparent 15px, #92cdff 15px, #92cdff 20px, transparent 20px, transparent 25px);
+    border-color: red;
+    border-image-source: repeating-linear-gradient( -45deg, #ffffff 5px, #fe9e90 5px, #fe9e90 10px, #ffffff 10px, #ffffff 15px, #92cdff 15px, #92cdff 20px, #ffffff 20px, #ffffff 25px);
+    border-image-slice: 5;
+    border-radius: 15px;
+}
+*/
+
+/*
+.wr {
+    padding: 20px;
+    width: 520px;
+}
+*/
+
+.gradient-wrapper {
+    padding: 5px;
+    
+    background-image: repeating-linear-gradient(to right bottom, #ffffff 5px, #fe9e90 5px, #fe9e90 10px, #ffffff 10px, #ffffff 15px, #92cdff 15px, #92cdff 20px, #ffffff 20px, #ffffff 25px);;
 }
 
 .holder-2 b {
@@ -1391,6 +1417,62 @@ a:active {
     border-radius: 5px;
 }
 
+.modal-feedback-form input:hover,
+.modal-feedback-form textarea:hover {
+    box-shadow: 0 0 0 1px #d3d3d2;
+}
+
+.modal-feedback-form {
+    position: relative;
+}
+
+/*
+.modal-feedback-form input:nth-of-type(1)::after {
+    content: "";
+    
+    position: absolute;
+    
+    width: 20px;
+    height: 20px;
+    
+    background-color: #000000;
+}
+*/
+
+/*
+.modal-feedback-form input::before {
+    content: "Rerwrwrwerwerwre";
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    display: inline-block;
+    height: 20px;
+}
+
+.modal-feedback-form input:nth-of-type(1)::before {
+    content: "Как вас зовут?";
+}
+*/
+
+/*Скрываем плейсхолдер.Н*/
+
+.modal-feedback-form input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.modal-feedback-form input:focus::-moz-placeholder {
+    color: transparent;
+}
+.modal-feedback-form input:focus:-moz-placeholder {
+    color: transparent;
+}
+.modal-feedback-form input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+/*Скрываем плейсхолдер.К*/
+
 .modal-feedback span {
     display: block;
     
@@ -1488,7 +1570,8 @@ a:active {
 }
 
 .catalog-controls-tuggle {
-    padding: 10px 15px;
+/*    padding: 10px 15px;*/
+    padding: 6px 15px;
 /*    margin-right: 15px;*/
     
     background-color: rgba(255, 255, 255, 0.3);
@@ -1500,11 +1583,16 @@ a:active {
     align-content: center;
     box-sizing: border-box;
     width: 195px;
-    height: 40px;
+    height: 35px;
+}
+
+.label-range {
+    margin-top: -1px;
 }
 
 .label-range input {
-    width: 20px;
+    /*width: 25px; - Для живого input*/
+    width: 0;
     padding: 0;
     border: none;
     background-color: transparent;
@@ -1522,7 +1610,7 @@ a:active {
     
     width: 190px;
     height: 4px;
-    margin: 5px 0;
+    margin: 9.5px 0;
     
     background-color: rgba(255, 255, 255, 0.7);
 }
@@ -1534,12 +1622,27 @@ a:active {
 
 .scale-tuggle {
     position: absolute;
+    top: -8px;
     
     width: 20px;
     height: 20px;
     
     border-radius: 50%;
     background-color: #ffffff;
+}
+
+.scale-tuggle:hover {
+    box-shadow: 0 0 0 2px #ffffff;
+    
+    cursor: pointer;
+}
+
+.scale-tuggle-min {
+    left: 10%;
+}
+
+.scale-tuggle-max {
+    right: 30%;
 }
 
 /*
@@ -1573,7 +1676,9 @@ a:active {
     
     box-sizing: border-box;
     width: 415px;
-    height: 40px;
+    height: 35px;
+    
+    vertical-align: middle;
 }
 
 .tuggle-rbtn input {
@@ -1582,6 +1687,7 @@ a:active {
 
 .tuggle-rbtn label {
     position: relative;
+    top: 3px;
     margin-left: 35px;
 }
 
@@ -1613,6 +1719,7 @@ input[type~="radio"]:checked + label::before {
     
     box-sizing: border-box;
     width: 700px;
+    height: 35px;
 }
 
 /*В разработке(Пока успешно)*/
@@ -1622,6 +1729,7 @@ input[type~="radio"]:checked + label::before {
 
 .tuggle-cbx label {
     position: relative;
+    top: 3px;
     margin-left: 35px;
 }
 
@@ -1630,7 +1738,7 @@ input[type~="radio"]:checked + label::before {
     
     position: absolute;
     left: -35px;
-    top: -3px;
+    top: -1px;
     
     display: inline-block;
     width: 20px;
@@ -1647,7 +1755,7 @@ input[type~="checkbox"]:checked + label::after {
     
     position: absolute;
     left: -31.5px;
-    top: 1px;
+    top: 3px;
     
     width: 12px;
     height: 6px;
@@ -1673,8 +1781,26 @@ input[type~="checkbox"]:checked + label::after {
     align-self: flex-end;
     
     box-sizing: border-box;
-    height: 40px;
+    height: 35px;
     width: 145px;
+    margin-bottom: 4px;
+    
+    font-weight: 500;
+}
+
+.catalog-controls-floor button:hover {
+    color: #000000;
+    
+    background-color: #ffffff;
+}
+
+.catalog-controls-floor button:active {
+    border: none;
+    
+    color: #000000;
+    
+    background-color: #eaeaea;
+    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
 .catalog-container {
@@ -1907,6 +2033,7 @@ input[type~="checkbox"]:checked + label::after {
 1. Исользовать дополнительные стили для сеток всегда.
 2. Не использовать общие стили.
 3. Создать иерархию классов.
+4. Спрайты делаем в последнюю очередь
 */
 
 /*
@@ -1916,15 +2043,16 @@ input[type~="checkbox"]:checked + label::after {
 6. 975: Нет реакции на хувер
 10. 460: Сделать обводку тенями, чтобы не влиять на размеры. Неадекватное отображение.
 11. 1336: Не работает активный псевдокласс пегинатора.
-12. 750: Перепройти курс по рамкам-изображениям
 14. 990: Cетка позиционированием локайшн
 15. 1200: Как стилизовать форму-выпадашку?
-16. 1000: Текст ареа не наследует шрифт
+16. 1000: Текстареа не наследует шрифт
 17. Состояния сошилов
-18. Рамка подписки
 19. Выпадашка корзины
-20. Рендж
 21. Настроить правильный опасити
 22. Стили состояний
 23. Не могу задать кординаты ползункам в рандж
+24. Cтили состояний приминимы к псевдоэлементам?
+25. Как вывести маленькую надпись над формой
+26. Рамка-градиент
+27. Подогнать под минимаольное разрешение
 */
