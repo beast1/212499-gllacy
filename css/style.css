@@ -21,8 +21,110 @@ body {
     @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic'); /*Как лучше подключать шрифты(css или html)?*/
     font-weight: bold;
     
+    margin: 0;
+    
     background-color: #849d8f;
 }
+
+input[name="slider-toggle"] {
+    display: none;
+}
+
+#rbtn-1:checked ~ .site-wrapper .content-wrapper {
+/*    background-color: #849d8f;*/
+    background: #849d8f url("../img/ice-1.png") no-repeat top center;
+    
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+#rbtn-2:checked ~ .site-wrapper .content-wrapper {
+    background-color: #8996a6;
+    background: #8996a6 url("../img/ice-2.png") no-repeat top center;
+    
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+#rbtn-3:checked ~ .site-wrapper .content-wrapper {
+    background-color: #9d8b84;
+    background: #9d8b84 url("../img/ice-3.png") no-repeat top center;
+    
+    transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+#rbtn-1:checked ~ .site-wrapper #slide-1,
+#rbtn-2:checked ~ .site-wrapper #slide-2,
+#rbtn-3:checked ~ .site-wrapper #slide-3 {
+    display: block;
+}
+
+/*Стили контента слайдера.Н*/
+
+.page-header-slider {
+    position: relative;
+    
+    margin-top: 285px;
+}
+
+.slider-controls {
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+}
+
+.slider-controls label {
+    display: inline-block;
+    
+    width: 17px;
+    height: 17px;
+    border: 3px solid #ffffff;
+    
+    border-radius: 50%;
+}
+
+#rbtn-1:checked ~ .site-wrapper label[for="rbtn-1"],
+#rbtn-2:checked ~ .site-wrapper label[for="rbtn-2"],
+#rbtn-3:checked ~ .site-wrapper label[for="rbtn-3"] {
+    background-color: #ffffff;
+}
+
+label[for="rbtn-1"]:hover,
+label[for="rbtn-2"]:hover,
+label[for="rbtn-3"]:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+
+#slide-1,
+#slide-2,
+#slide-3 {
+    display: none;
+    
+    text-align: center;
+}
+
+.slide-title {
+    display: block;
+    
+    font-size: 60px;
+    line-height: 60px;
+}
+
+.slide-title + .btn {
+    padding: 10px 40px;
+    margin-top: 40px;
+    
+    font-size: 32px;
+    line-height: 44px;
+    font-weight: bold;
+    
+    border-radius: 100px;
+}
+
+.slider-controls {
+    position: absolute;
+}
+
+/*Стили контента слайдера.К*/
 
 .container {
     width: 1146px;
@@ -39,11 +141,7 @@ body {
 .page-header {
     color: #ffffff;
     
-    margin-top: 10px;
-}
-
-.page-header-slider {
-    min-height: 520px;
+    padding-top: 10px; /*Чтобы избежать выпадания*/
 }
 
 .page-header-top {
@@ -86,12 +184,9 @@ body {
     
     font-size: 16px;
     line-height: 18px;
+    color: #ffffff;
     
 /*    outline: 3px dashed green;*/
-}
-
-.menu a {
-    
 }
 
 .header-btn-1:hover {
@@ -212,10 +307,6 @@ body {
     display: flex;
     justify-content: space-between;
     width: 265px;
-}
-
-.user-block-controls a:not(.btn) {
-    color: #000000;
 }
 
 .header-btn-2 {
@@ -370,17 +461,114 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/*
 .basket-pop-up table {
+    display: flex;
+}
+*/
+
+.basket-table-preview {
+    padding: 0 15px;
+}
+
+.basket-table-name {
+    width: 210px;
+}
+
+.basket-table-weight {
+    padding: 0 30px;
+}
+/*
+.basket-table {
+    display: flex;
+    flex-wrap: wrap;
+
     border-bottom: 1px solid #cacac7;
 }
+
+.basket-tr {
+    display: flex;
+    align-items: center;
+
+    width: 510px;
+    margin-bottom: 20px;
+}
+
+.basket-tr .cross-it-out {
+    position: relative;
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+
+    background-color: transparent;
+}
+
+.basket-tr .cross-it-out::before,
+.basket-tr .cross-it-out::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 4px;
+
+    width: 15px;
+    height: 2px;
+
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.basket-tr .cross-it-out::before {
+    transform: rotate(45deg);
+}
+
+.basket-tr .cross-it-out::after {
+    transform: rotate(-45deg);
+}
+
+.basket-tr .preview {
+    margin: 0 15px;
+}
+
+.basket-tr .name {
+    display: inline-block;
+    max-width: 240px;
+    border: none;
+    margin-right: auto;
+}
+
+.basket-tr .weight {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.basket-tr .disabled {
+    color: #a6a6a5;
+}
+
+.basket-tr  .basket-price {
+    margin-right: 20px;
+}
+*/
+
+/*
+.basket-pop-up table {
+    display: flex;
+}
+*/
 
 .basket-pop-up {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+/*    align-items: flex-end;*/
+
+    padding: 20px 15px;
 }
 
-.basket-pop-up span:not(.disabled) {
+.basket-pop-up > span {
     margin: 10px 0;
     
     font-weight: bold;
@@ -543,14 +731,15 @@ body {
 }
 
 .h3 {
+    display: inline;
     margin: 0;
     
     color: #ffffff;
     font-size: 16px;
     line-height: 22px;
     font-weight: normal;
-    text-decoration: underline;
-    text-align: center;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .hidden-container { /*Стили оберток выпадашек*/
@@ -580,17 +769,50 @@ body {
 
 /*Cтили состояния ссылок. Начало*/
 
-a/*:not(.btn)*/ {
+.a-db /*a for dark background*/ {
     color: #ffffff;
+    text-decoration: none;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-a/*:not(.btn)*/:hover {
+.a-db:hover /*a for dark background*/ {
+    color: #ffbc9e;
+    text-decoration: none;
+    
+    border-bottom: 1px solid rgba(255, 188, 158, 0.2);
+}
+
+.a-lb /*a for light background*/ {
+    color: #000000;
+    text-decoration: none;
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.a-lb:hover /*a for dark background*/ {
+    color: #e84d37;
+    text-decoration: none;
+    
+    border-bottom: 1px solid rgba(232, 77, 55, 0.2);
+}
+
+/*
+a {
+    color: #ffffff;
+    text-decoration: none;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+a:hover {
     color: #ffbc9e;
 }
 
-a/*:not(.btn)*/:active {
+a:active {
     color: #ffbc9e;
 }
+*/
 
 /*
 .hidden-container a,
@@ -619,13 +841,8 @@ a/*:not(.btn)*/:active {
     font-size: 18px;
     line-height: 24px;
     text-decoration: none;
-/*
-    text-shadow: 
-        0 0 4px #9e4334,
-        0 2px 4px #9e4334;
-*/
+    
     text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
-        
     background-color: #ed5b3d;
     background-image: linear-gradient(0deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
     border: none;
@@ -645,6 +862,11 @@ a/*:not(.btn)*/:active {
 
 /*Иконки товаров*/
 
+.popular-item,
+.catalog-item {
+    text-align: center;
+}
+
 .popular-item img,
 .catalog-item img {
     border-radius: 50%;
@@ -663,6 +885,13 @@ a/*:not(.btn)*/:active {
     visibility: hidden;
     
 /*    transition: 0.2s;*/
+}
+
+.popular-item a:not(.btn),
+.catalog-item a:not(.btn) {
+    font: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /*
@@ -1192,10 +1421,17 @@ a/*:not(.btn)*/:active {
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
-/*    word-spacing: 20px;*/
 }
 
-.breadcrumbs a:not(:last-of-type)::after {
+.breadcrumbs ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+}
+
+.breadcrumbs li:not(:last-of-type)::after {
     content: "»";
     
     display: inline-block;
@@ -1267,6 +1503,58 @@ a/*:not(.btn)*/:active {
     height: 40px;
 }
 
+.label-range input {
+    width: 20px;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+    color: #ffffff;
+    
+    cursor: text;
+}
+
+.catalog-controls-tuggle .scale {
+    position: relative;
+    
+    width: 190px;
+    height: 4px;
+    margin: 5px 0;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.catalog-controls-tuggle .bar {
+    height: 4px;
+    background-color: #ffffff;
+}
+
+.scale-tuggle {
+    position: absolute;
+    
+    width: 20px;
+    height: 20px;
+    
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+/*
+Проблемы с кординатами
+.scale-tuggle-min {
+    top: 0;
+}
+
+.scale-tuggle-max {
+    right: 0;
+}
+*/
+
+
+/*
 .tuggle-range {
     display: flex;
     justify-content: center;
@@ -1276,6 +1564,7 @@ a/*:not(.btn)*/:active {
     width: 215px;
     height: 40px;
 }
+*/
 
 .tuggle-rbtn {
     display: flex;
@@ -1464,6 +1753,72 @@ input[type~="checkbox"]:checked + label::after {
 }
 */
 
+/*Пегинация списком
+.pegination {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+.pegination ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    
+    list-style: none;
+    
+    outline: 1px dashed white;
+}
+
+.pegination li {
+    width: 20px;
+    height: 20px;
+    
+    text-align: center;
+    
+    outline: 2px dashed red;
+}
+
+.pegination a {
+    outline: 2px dashed black;
+}
+
+.pegination .next, 
+.pegination .prev {
+    position: relative;
+}
+
+.pegination .next::before {
+    content: '';
+    
+    position: absolute;
+    
+    width: 8px;
+    height: 8px;
+    
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    
+    transform: translate(-7px, 3px) rotate(225deg);
+}
+
+.pegination .prev::before {
+    content: '';
+    
+    position: absolute;
+    
+    width: 8px;
+    height: 8px;
+    
+    border-bottom: 3px solid #ffffff;
+    border-left: 3px solid #ffffff;
+    
+    transform: translate(-4px, 3px) rotate(45deg);
+}
+*/
+
+
+/*Пегинация без списка*/
 .pegination {
     display: flex;
     justify-content: space-between;
@@ -1487,12 +1842,12 @@ input[type~="checkbox"]:checked + label::after {
     text-align: center;
     vertical-align: center;
     text-decoration: none;
+    color: #ffffff;
 }
 
 .pegination .next, 
 .pegination .prev {
     position: relative;
-/*    outline: 2px dashed black;*/
 }
 
 .pegination .next::before {
@@ -1547,6 +1902,7 @@ input[type~="checkbox"]:checked + label::after {
     background-color: #ffffff;
     border-radius: 50%;
 }
+
 /*
 1. Исользовать дополнительные стили для сеток всегда.
 2. Не использовать общие стили.
@@ -1556,18 +1912,19 @@ input[type~="checkbox"]:checked + label::after {
 /*
 Заметки:
 1. Строка 190: Разобрать отличия align-content и align-item.
-2. 574: Уточнить свойство background. Растянуть фон на всю ширину; Высота блока превышает макет на 20рх. Увеличить имг или уменьшить блок?
-3. 614: Как доставать градиенты из ФШ? Вебинар по ФШ.
-4. 695: Не отображается картинка фона.
 5. 1013: Не могу отцентровать номер страницы.
 6. 975: Нет реакции на хувер
-7. 865: Не видит псевдоэлемент
-9. 290: Выровнять ссылки
 10. 460: Сделать обводку тенями, чтобы не влиять на размеры. Неадекватное отображение.
 11. 1336: Не работает активный псевдокласс пегинатора.
 12. 750: Перепройти курс по рамкам-изображениям
-13. : Перенастроить спрайты
 14. 990: Cетка позиционированием локайшн
 15. 1200: Как стилизовать форму-выпадашку?
 16. 1000: Текст ареа не наследует шрифт
+17. Состояния сошилов
+18. Рамка подписки
+19. Выпадашка корзины
+20. Рендж
+21. Настроить правильный опасити
+22. Стили состояний
+23. Не могу задать кординаты ползункам в рандж
 */
