@@ -170,13 +170,13 @@
                           столу</a>
                     </div>
                     <div class="fill">
-<!--                        <div class="wr">-->
+                        <div class="fill-content">
                         <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
                         <form class="form-spam" action="#" method="post">
                             <input type="email" name="email" id="subscribe" placeholder="Электронная почта">
                             <button class="btn" type="submit" name="subscribe-btn">Отправить</button>
                         </form>
-<!--                        </div>-->
+                        </div>
                     </div>
                 </div>
                 <div class="location">
@@ -229,13 +229,15 @@
             </footer>
         </div>
     </div>
-    <div class="modal-feedback-wrapper hidden">
+    <div class="modal-feedback-wrapper hiden">
         <div class="modal-feedback">
             <button class="modal-exit" type="button">Закрыть</button>
             <span>Мы обязательно вам ответим!</span>
             <form class="modal-feedback-form" action="#" method="post">
-                <input type="text" name="client" placeholder="Как вас зовут?">
-                <input type="email" name="email" placeholder="Ваша почта для ответа?">
+                <input type="text" name="client" id="fb-name" placeholder="Как вас зовут?" required>
+                <label for="fb-name">Как вас зовут?</label>
+                <input type="email" name="email" id="fb-email" placeholder="Ваша почта для ответа?" required>
+                <label for="fb-email">Ваша почта для ответа?</label>
                 <textarea rows="6" cols="40" placeholder="Напишите что-нибудь..."></textarea>
                 <button class="btn" type="submit" name="feedback-btn">Отправить</button>
             </form>

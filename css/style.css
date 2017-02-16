@@ -14,6 +14,7 @@
 
 html,
 body {
+    min-width: 1200px;
     font-size: 16px;
     line-height: 22px;
     color: #000000;
@@ -189,14 +190,30 @@ label[for="rbtn-3"]:hover {
 
 /*.page-header-menu > ul > li > a*/
 .header-btn-1 {
+    position: relative;
+    
     display: inline-block; /*Причина: Чтобы избавится от выпадания. Вопрос: Нужно ли сбрасывать пробелы в родителе?*/
     padding: 10px 15px;
     
     font-size: 16px;
     line-height: 18px;
     color: #ffffff;
+    text-decoration: none;
     
 /*    outline: 3px dashed green;*/
+}
+
+.header-btn-1::before {
+    content: "";
+    
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    
+    height: 1px;
+    
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .header-btn-1:hover {
@@ -1184,35 +1201,20 @@ a:active {
     background: #ffffff url("../img/background-ummy-short-3.jpg") no-repeat;
 }
 
-/*
 .holder-2 .fill:nth-of-type(2) {
-    background-color: #f8f7f4;
     box-sizing: border-box;
-    padding: 0;
-    overflow: hidden;
-    border-width: 5px;
-    border-color: red;
-    border-style: solid;
-    border: 5px solid red;
-    border-width: 5px; 
-    border-color: red;
-    border-image-source: repeating-linear-gradient( -45deg, #ffffff 5px, #fe9e90 5px, #fe9e90 10px, #ffffff 10px, #ffffff 15px, #92cdff 15px, #92cdff 20px, #ffffff 20px, #ffffff 25px);
-    border-image-slice: 5;
-    border-radius: 15px;
-}
-*/
-
-/*
-.wr {
-    padding: 20px;
-    width: 520px;
-}
-*/
-
-.gradient-wrapper {
-    padding: 5px;
+    flex-basis: 560px;
+    padding: 6px;
     
-    background-image: repeating-linear-gradient(to right bottom, #ffffff 5px, #fe9e90 5px, #fe9e90 10px, #ffffff 10px, #ffffff 15px, #92cdff 15px, #92cdff 20px, #ffffff 20px, #ffffff 25px);;
+    background-image: repeating-linear-gradient( -45deg, #ffffff 7px, #fe9e90 7px, #fe9e90 14px, #ffffff 14px, #ffffff 21px, #92cdff 21px, #92cdff 28px, #ffffff 28px, #ffffff 35px);
+}
+
+.holder-2 .fill-content {
+    padding: 28px 18px;
+    width: 510px;
+    
+    background-color: #f8f7f4;
+    border-radius: inherit;
 }
 
 .holder-2 b {
@@ -1227,12 +1229,15 @@ a:active {
 }
 
 .holder-2 p {
+    margin: 0;
     margin-bottom: 40px;
+    
+    font-weight: normal;
 }
 
 .form-spam {
     display: flex;
-    margin-bottom: 15px;
+/*    margin-bottom: 15px;*/
 }
 
 .form-spam input {
@@ -1248,12 +1253,6 @@ a:active {
     border-color: #d3d3d2;
     border-radius: 5px;
 }
-
-/*
-.font-black {
-    color: #000000;
-}
-*/
 
 .popular {
     display: flex;
@@ -1309,24 +1308,6 @@ a:active {
     top: 205px;
     left: 15px;
 }
-
-/*
-Хувер фон (в разработке)
-Проблема: Как разметить, чтобы фон не закрывал наполнение?
-.popular-item-hidden {
-    width: 267px;
-    padding-top: 5px;
-    padding-right: 13px;
-    padding-left: 13px;
-    padding-bottom: 80px;
-    
-    position: absolute;
-    z-index: -1;
-    
-    background-color: #ffffff; 
-    opacity: 0.3;
-}
-*/
 
 .features {  
     padding: 30px 20px;
@@ -1542,13 +1523,15 @@ a:active {
     
     font-size: 16px;
     line-height: 24px;
-    font-weight: 500;
+    font-weight: normal;
     
     border-radius: 5px;
 }
 
 .modal-feedback-form textarea {
     font: inherit;
+    font-weight: normal;
+    line-height: 24px;
 }
 
 .modal-feedback-form input:hover,
@@ -1556,8 +1539,50 @@ a:active {
     box-shadow: 0 0 0 1px #d3d3d2;
 }
 
+.modal-feedback-form input:focus,
+.modal-feedback-form textarea:focus {
+    box-shadow: none;
+}
+
 .modal-feedback-form {
     position: relative;
+}
+
+.modal-feedback-form label[for="fb-name"] {
+    position: absolute;
+    top: -14px;
+    left: 15px;
+}
+
+.modal-feedback-form label[for="fb-email"] {
+    position: absolute;
+    top: 52px;
+    left: 15px;
+}
+
+.modal-feedback-form label {
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.2s ease-out;
+}
+
+.modal-feedback-form input:valid + label {
+    color: #999999;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-feedback-form input:focus + label {
+    color: #5b9ddf;
+    
+    visibility: visible;
+    opacity: 1;
 }
 
 /*
@@ -1744,6 +1769,8 @@ a:active {
     background-image: url(../img/icon-mark.png);
     background-repeat: no-repeat;
     background-position: right 10px;
+    
+    outline: none;
 }
 
 .tuggle-select:hover select {
@@ -1881,6 +1908,8 @@ a:active {
     position: relative;
     top: 3px;
     margin-left: 35px;
+    
+    cursor: pointer;
 }
 
 .tuggle-rbtn label::before {
@@ -1897,6 +1926,21 @@ a:active {
     
     box-shadow: 0 0 0 1px #ffffff;
     border-radius: 50%;
+    
+    cursor: pointer;
+}
+
+.tuggle-rbtn-item:hover label::before {
+    box-shadow: 0 0 0 2px #ffffff;
+}
+
+.tuggle-rbtn-item.disabled:hover label::before {
+    box-shadow: 0 0 0 1px #ffffff;
+}
+
+.tuggle-rbtn-item.disabled label::before,
+.tuggle-rbtn-item.disabled label::after {
+    opacity: 0.5;
 }
 
 input[type~="radio"]:checked + label::before {
@@ -1923,6 +1967,8 @@ input[type~="radio"]:checked + label::before {
     position: relative;
     top: 3px;
     margin-left: 35px;
+    
+    cursor: pointer;
 }
 
 .tuggle-cbx label::before {
@@ -1938,6 +1984,21 @@ input[type~="radio"]:checked + label::before {
     border: 1px solid #ffffff;
     
     border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+.tuggle-cbx-item:hover label::before {
+    box-shadow: 0 0 0 1px #ffffff;
+}
+
+.tuggle-cbx-item.disabled:hover label::before {
+    box-shadow: none;
+}
+
+.tuggle-cbx-item.disabled label::before,
+.tuggle-cbx-item.disabled label::after {
+    opacity: 0.5;
 }
 
 /*Оживляяем псевдо-чек-боксы. Начало*/
@@ -2234,14 +2295,6 @@ input[type~="checkbox"]:checked + label::after {
 Заметки:
 1. ---Строка 190: Разобрать отличия align-content и align-item.
 5. 1013: Не могу отцентровать номер страницы.
-14. 990: Cетка позиционированием локайшн
-16. 1000: Текстареа не наследует шрифт
 21. --Настроить правильный опасити
-24. ---Cтили состояний приминимы к псевдоэлементам?
-25. Как вывести маленькую надпись над формой
-26. Рамка-градиент
-27. -Подогнать под минимаольное разрешение (Мороженное съезжает)
-28. Отступ для опшин и фокус
-29. Подчеркивание в мейн меню
-30. Хуверы фильтров
+28. Отступ для опшин
 */
