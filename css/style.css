@@ -31,24 +31,30 @@ input[name="slider-toggle"] {
 }
 
 #rbtn-1:checked ~ .site-wrapper .content-wrapper {
-/*    background-color: #849d8f;*/
-    background: #849d8f url("../img/ice-1.png") no-repeat top center;
-    
-    transition: background-image 0.5s ease, background-color 0.5s ease;
+/*
+    background-image: url("../img/ice-1.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+*/
+    background: url("../img/ice-1.png") no-repeat top center;
+/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    transition: background 0.5s ease;
 }
 
 #rbtn-2:checked ~ .site-wrapper .content-wrapper {
     background-color: #8996a6;
     background: #8996a6 url("../img/ice-2.png") no-repeat top center;
     
-    transition: background-image 0.5s ease, background-color 0.5s ease;
+/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    transition: background 0.5s ease;
 }
 
 #rbtn-3:checked ~ .site-wrapper .content-wrapper {
     background-color: #9d8b84;
     background: #9d8b84 url("../img/ice-3.png") no-repeat top center;
     
-    transition: background-image 0.5s ease, background-color 0.5s ease;
+/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    transition: background 0.5s ease;
 }
 
 #rbtn-1:checked ~ .site-wrapper #slide-1,
@@ -119,6 +125,7 @@ label[for="rbtn-3"]:hover {
     font-size: 32px;
     line-height: 44px;
     font-weight: bold;
+    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
     
     border-radius: 100px;
 }
@@ -378,7 +385,7 @@ label[for="rbtn-3"]:hover {
     background-position: 0px -348px;
 }
 
-.basket-btn:hover::before {
+.active-basket-btn::before {
     background-position: 0px -30px;
 }
 
@@ -390,7 +397,7 @@ label[for="rbtn-3"]:hover {
 
 .search-btn:hover,
 .login-btn:hover,
-.basket-btn:hover {
+.active-basket-btn {
     position: relative;
     
     color: #000000;
@@ -405,7 +412,7 @@ label[for="rbtn-3"]:hover {
     
     box-sizing: border-box;
     width: 340px;
-    padding: 20px;
+    padding: 20px 15px;
     margin-top: 5px;
     
     visibility: hidden;
@@ -422,7 +429,7 @@ label[for="rbtn-3"]:hover {
     box-sizing: border-box;
     width: 280px;
     height: 215px;
-    padding: 20px;
+    padding: 20px 15px;
     margin-top: 5px;
     
     visibility: hidden;
@@ -452,8 +459,8 @@ label[for="rbtn-3"]:hover {
     z-index: 20;
     
     box-sizing: border-box;
-    width: 640px;
-    padding: 20px;
+    width: 540px;
+    padding: 20px 15px;
     margin-top: 5px;
     
     color: #000000;
@@ -464,12 +471,115 @@ label[for="rbtn-3"]:hover {
     transition: all 0.3s ease-in-out;
 }
 
+/*Разметка списка товара.Н*/
+
+.basket-table {
+    font-size: 13px;
+    line-height: 16px;
+    
+    border-bottom: 1px solid #ccccc9;
+}
+
+.basket-tr {
+    display: flex;
+    
+    margin-bottom: 20px;
+}
+
+.basket-tr .cross-it-out {
+    position: relative;
+
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin-top: 13px;
+    border: none;
+
+    background-color: transparent;
+}
+
+.basket-tr .cross-it-out::before,
+.basket-tr .cross-it-out::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 4px;
+    
+    width: 15px;
+    height: 2px;
+
+    background-color: #3e3e3e;
+    cursor: pointer;
+}
+
+.basket-tr .cross-it-out::before {
+    transform: rotate(45deg);
+}
+
+.basket-tr .cross-it-out::after {
+    transform: rotate(-45deg);
+}
+
+.basket-tr .disabled {
+    opacity: 0.5;
+}
+
+.basket-tr .weight {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.basket-tr .name {
+/*    display: inline;*/
+    
+    width: 215px;
+    padding-top: 10px;
+}
+
+.basket-tr .preview {
+    margin: 0 15px;
+}
+
+.basket-tr .basket-price {
+    padding-top: 10px;
+    margin-right: 15px;
+}
+
+/*Разметка списка товара.К*/
+
+.basket-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.basket-controls span {
+    margin: 10px 0;
+    
+    font-weight: bold;
+}
+
+/*Разкоментировать позже
+.basket-pop-up > span {
+    margin: 10px 0;
+    
+    font-weight: bold;
+}
+
+.basket-pop-up a:not(.btn):hover {
+    color: #ffbc9e;
+}
+*/
+
 /*
 .basket-pop-up table {
     display: flex;
 }
 */
 
+/*
 .basket-table-preview {
     padding: 0 15px;
 }
@@ -481,6 +591,7 @@ label[for="rbtn-3"]:hover {
 .basket-table-weight {
     padding: 0 30px;
 }
+*/
 /*
 .basket-table {
     display: flex;
@@ -563,23 +674,7 @@ label[for="rbtn-3"]:hover {
 }
 */
 
-.basket-pop-up {
-    display: flex;
-    flex-direction: column;
-/*    align-items: flex-end;*/
 
-    padding: 20px 15px;
-}
-
-.basket-pop-up > span {
-    margin: 10px 0;
-    
-    font-weight: bold;
-}
-
-.basket-pop-up a:not(.btn):hover {
-    color: #ffbc9e;
-}
 
 .search:hover .search-pop-up,
 .login:hover .login-pop-up,
@@ -659,6 +754,20 @@ label[for="rbtn-3"]:hover {
     font-size: 0;
     
     border-radius: 50%;
+    opacity: 0.8;
+}
+
+.social-btn:hover {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    
+    opacity: 1;
+}
+
+.social-btn:active {
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    
+    opacity: 1;
+    box-shadow: inset 0 2px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
 .social-btn-twitter {
@@ -766,6 +875,10 @@ label[for="rbtn-3"]:hover {
     border-radius: 5px;
 }
 
+.hidden-container .btn { /*Стили оберток выпадашек*/
+    border-radius: 20px / 25px;
+}
+
 .hidden-container input:hover {
 /*    box-shadow: 0 0 0 1px #c7c6c5;*/
 }
@@ -845,7 +958,7 @@ a:active {
     line-height: 24px;
     text-decoration: none;
     
-    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+/*    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);*/
     background-color: #ed5b3d;
     background-image: linear-gradient(0deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
     border: none;
@@ -856,6 +969,8 @@ a:active {
 .btn:hover {
     /*Rак зделать дополнительную прозрачность?*/
     color: #ffffff;
+    
+    background-image: linear-gradient(180deg, rgb(245,134,105) 0%, rgb(236,111,94) 100%);
 }
 
 .btn:active {
@@ -888,6 +1003,11 @@ a:active {
     visibility: hidden;
     
 /*    transition: 0.2s;*/
+}
+
+.popular-item .btn,
+.catalog-item .btn {
+    border-radius: 20px / 25px;
 }
 
 .popular-item a:not(.btn),
@@ -1308,6 +1428,16 @@ a:active {
     text-align: center;
 }
 
+.modal-feedback-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 10000px;
+    height: 10000px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .modal-feedback {
     position: fixed;
     top: 0;
@@ -1321,9 +1451,9 @@ a:active {
     margin-left: -257.5px;
     margin-top: -237.5px;
     
-    
     background-color: #f8f7f4;
     border-radius: 10px;
+/*    outline: 1000px solid rgba(0, 0, 0, 0.5);*/
 }
 
 .modal-exit {
@@ -1415,6 +1545,10 @@ a:active {
     font-weight: 500;
     
     border-radius: 5px;
+}
+
+.modal-feedback-form textarea {
+    font: inherit;
 }
 
 .modal-feedback-form input:hover,
@@ -1584,6 +1718,64 @@ a:active {
     box-sizing: border-box;
     width: 195px;
     height: 35px;
+    
+/*
+    background-image: url(../img/icon-mark.png);
+    background-repeat: no-repeat;
+    background-position: 93% 52%;
+*/
+}
+
+/*
+.tuggle-select {
+    
+}
+*/
+
+.tuggle-select select {
+    color: #ffffff;
+    font: inherit;
+    font-weight: 500;
+     -webkit-appearance: none;
+    
+    border: none;
+    
+    background-color: transparent;
+    background-image: url(../img/icon-mark.png);
+    background-repeat: no-repeat;
+    background-position: right 10px;
+}
+
+.tuggle-select:hover select {
+    color: #000000;
+    
+    background-image: url(../img/icon-mark-alt.png);
+    background-repeat: no-repeat;
+    background-position: right 10px;
+
+}
+
+.tuggle-select:hover {
+    background-color: #ffffff;
+}
+
+/*
+.tuggle-select option-container {
+    padding-top: 5px;
+}
+*/
+
+.tuggle-select option {
+    color: #000000;
+    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+}
+
+.tuggle-select select:focus {
+    border: none;
+    box-shadow: none;
 }
 
 .label-range {
@@ -1966,7 +2158,6 @@ input[type~="checkbox"]:checked + label::after {
     padding: 4px 8px;
     
     text-align: center;
-    vertical-align: center;
     text-decoration: none;
     color: #ffffff;
 }
@@ -2004,14 +2195,14 @@ input[type~="checkbox"]:checked + label::after {
     transform: translate(-4px, 3px) rotate(45deg);
 }
 
-.pegination a:hover {
+.pegination a:not(.disabled):not(.active):hover {
     color: #ffffff;
     
-    background: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
 }
 
-.peginaion a:active {
+.pegination a:not(.disabled):not(.active):active {
     color: #000000;
     
     background-color: #ffffff;
@@ -2020,6 +2211,8 @@ input[type~="checkbox"]:checked + label::after {
 
 .pegination .disabled {
     opacity: 0.3;
+    
+    cursor: context-menu;
 }
 
 .pegination .active {
@@ -2027,6 +2220,7 @@ input[type~="checkbox"]:checked + label::after {
     
     background-color: #ffffff;
     border-radius: 50%;
+    cursor: context-menu;
 }
 
 /*
@@ -2038,21 +2232,16 @@ input[type~="checkbox"]:checked + label::after {
 
 /*
 Заметки:
-1. Строка 190: Разобрать отличия align-content и align-item.
+1. ---Строка 190: Разобрать отличия align-content и align-item.
 5. 1013: Не могу отцентровать номер страницы.
-6. 975: Нет реакции на хувер
-10. 460: Сделать обводку тенями, чтобы не влиять на размеры. Неадекватное отображение.
-11. 1336: Не работает активный псевдокласс пегинатора.
 14. 990: Cетка позиционированием локайшн
-15. 1200: Как стилизовать форму-выпадашку?
 16. 1000: Текстареа не наследует шрифт
-17. Состояния сошилов
-19. Выпадашка корзины
-21. Настроить правильный опасити
-22. Стили состояний
-23. Не могу задать кординаты ползункам в рандж
-24. Cтили состояний приминимы к псевдоэлементам?
+21. --Настроить правильный опасити
+24. ---Cтили состояний приминимы к псевдоэлементам?
 25. Как вывести маленькую надпись над формой
 26. Рамка-градиент
-27. Подогнать под минимаольное разрешение
+27. -Подогнать под минимаольное разрешение (Мороженное съезжает)
+28. Отступ для опшин и фокус
+29. Подчеркивание в мейн меню
+30. Хуверы фильтров
 */

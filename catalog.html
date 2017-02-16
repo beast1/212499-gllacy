@@ -50,8 +50,9 @@
                             </form>
                         </div>
                         <div class="basket">
-                            <button class="basket-btn header-btn-2" type="button">2 товара</button>
+                            <button class="active-basket-btn header-btn-2" type="button">2 товара</button>
                             <div class="basket-pop-up hidden-container">
+<!--
                                 <table>
                                     <tr>
                                         <td>
@@ -76,26 +77,28 @@
                                         <td>450 руб.</td>
                                     </tr>
                                 </table>
-                                <!--
+-->
+                                
                                 <div class="basket-table">
                                     <div class="basket-tr">
                                         <button class="cross-it-out" type="button"></button>
                                         <a class="preview" href="#"><img src="img/preview-1.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                                        <a class="name a-lb" href="#">Пломбир с апельсиновым джемом</a>
+                                        <span class="name"><a class="a-lb" href="#">Пломбир с апельсиновым джемом</a></span>
                                         <span class="weight">1,5 кг х <span class="disabled">200 руб.</span></span>
                                         <span class="basket-price">300 руб.</span>
                                     </div>
                                     <div class="basket-tr">
                                         <button class="cross-it-out" type="button"></button>
-                                        <a class="preview" href="#"><img src="img/preview-2.jpg" alt="Иконка товара" width="34px" height="34px"></a>
-                                        <a class="name a-lb" href="#">Клубничный пломбир с присыпкой из белого шоколада</a>
+                                        <a class="preview" href="#"><img src="img/preview-3.jpg" alt="Иконка товара" width="34px" height="34px"></a>
+                                        <span class="name"><a class="a-lb" href="#">Клубничный пломбир с присыпкой из белого шоколада</a></span>
                                         <span class="weight">1,5 кг х <span class="disabled">300 руб.</span></span>
                                         <span class="basket-price">450 руб.</span>
                                     </div>
                                 </div>
--->
-                                <span>Итого: 750 руб.</span>
-                                <a class="btn" href="#">Оформить заказ</a>
+                                <div class="basket-controls">
+                                    <span>Итого: 750 руб.</span>
+                                    <a class="btn" href="#">Оформить заказ</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,10 +125,10 @@
                     <span>Сортировка:</span>
                     <div class="catalog-controls-tuggle tuggle-select">
                         <select name="sort" id="sort" size="1">
-                            <option value="По популярности">По популярности</option>
-                            <option value="Сначала недорогие">Сначала недорогие</option>
-                            <option value="Сначала дорогие">Сначала дорогие</option>
-                            <option value="По жирности">По жирности</option>
+                            <option value="По популярности">по популярности</option>
+                            <option value="Сначала недорогие">сначала недорогие</option>
+                            <option value="Сначала дорогие">сначала дорогие</option>
+                            <option value="По жирности">по жирности</option>
                         </select>
                     </div>
                 </div>
@@ -164,7 +167,7 @@
                         <label for="catalog-rbtn-3">до 30%</label>
 
                         <input type="radio" name="fatness" id="catalog-rbtn-4" value="more then 30%">
-                        <label for="catalog-rbtn-4">Выше 30%</label>
+                        <label for="catalog-rbtn-4">выше 30%</label>
                     </div>
                 </div>
             </div>
@@ -174,27 +177,27 @@
                     <div class="catalog-controls-tuggle tuggle-cbx">
                         <div class="tuggle-cbx-item">
                             <input type="checkbox" name="chocolate" id="cbx-1" checked>
-                            <label for="cbx-1">Шоколадные</label>
+                            <label for="cbx-1">шоколадные</label>
                         </div>
 
                         <div class="tuggle-cbx-item">
                             <input type="checkbox" name="shugar" id="cbx-2" checked>
-                            <label for="cbx-2">Сахарные присыпки</label>
+                            <label for="cbx-2">сахарные присыпки</label>
                         </div>
 
                         <div class="tuggle-cbx-item">
                             <input type="checkbox" name="fruits" id="cbx-3">
-                            <label for="cbx-3">Фрукты</label>
+                            <label for="cbx-3">фрукты</label>
                         </div>
 
                         <div class="tuggle-cbx-item">
                             <input type="checkbox" name="syrup" id="cbx-4">
-                            <label for="cbx-4">Сиропы</label>
+                            <label for="cbx-4">сиропы</label>
                         </div>
 
                         <div class="tuggle-cbx-item">
                             <input type="checkbox" name="jam" id="cbx-5">
-                            <label for="cbx-5">Джемы</label>
+                            <label for="cbx-5">джемы</label>
                         </div>
                     </div>
                 </div>
