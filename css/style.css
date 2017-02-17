@@ -1,17 +1,3 @@
-/*
-Порядок свойст: 
-
-Позиционирование
-Блочная модель
-Типографика
-Оформление
-Анимация
-Разное
-*/
-
-
-/*Общие стили*/
-
 html,
 body {
     min-width: 1200px;
@@ -19,7 +5,6 @@ body {
     line-height: 22px;
     color: #000000;
     font-family: "Roboto", "Arial", sans-serif;
-    @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic'); /*Как лучше подключать шрифты(css или html)?*/
     font-weight: bold;
     
     margin: 0;
@@ -42,13 +27,8 @@ input[name="slider-toggle"] {
 }
 
 #rbtn-1:checked ~ .site-wrapper .content-wrapper {
-/*
-    background-image: url("../img/ice-1.png");
-    background-repeat: no-repeat;
-    background-position: top center;
-*/
     background: url("../img/ice-1.png") no-repeat top center;
-/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    -webkit-transition: background 0.5s ease;
     transition: background 0.5s ease;
 }
 
@@ -56,7 +36,8 @@ input[name="slider-toggle"] {
     background-color: #8996a6;
     background: #8996a6 url("../img/ice-2.png") no-repeat top center;
     
-/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    -webkit-transition: background 0.5s ease;
+    
     transition: background 0.5s ease;
 }
 
@@ -64,7 +45,8 @@ input[name="slider-toggle"] {
     background-color: #9d8b84;
     background: #9d8b84 url("../img/ice-3.png") no-repeat top center;
     
-/*    transition: background-image 0.5s ease, background-color 0.5s ease;*/
+    -webkit-transition: background 0.5s ease;
+    
     transition: background 0.5s ease;
 }
 
@@ -73,8 +55,6 @@ input[name="slider-toggle"] {
 #rbtn-3:checked ~ .site-wrapper #slide-3 {
     display: block;
 }
-
-/*Стили контента слайдера.Н*/
 
 .page-header-slider {
     position: relative;
@@ -150,15 +130,11 @@ label[for="rbtn-3"]:active {
     position: absolute;
 }
 
-/*Стили контента слайдера.К*/
-
 .container {
     width: 1146px;
     margin: 0 auto;
     padding: 0 27px;
 }
-
-/*Общие стили.Хедер*/
 
 .hidden {
     display: none;
@@ -167,55 +143,55 @@ label[for="rbtn-3"]:active {
 .page-header {
     color: #ffffff;
     
-    padding-top: 10px; /*Чтобы избежать выпадания*/
+    padding-top: 10px;
 }
 
 .page-header-top {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    
-/*    outline: 2px dashed black;*/
 }
 
 .logo {
     width: 150px;
     margin-right: 10px;
-    
-/*    outline: 2px dashed red;*/
 }
 
 .page-header-menu {
     margin-top: 10px;
 }
 
-/*.page-header-menu .menu*/
-/*.page-header-menu > ul*/
 .page-header-menu .menu {
     position: relative;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     
     padding: 0;
     margin: 0;
     
+    font-size: 0;
+    
     list-style: none;
     
-/*    outline: 1px dashed black;*/
 }
 
-/*.page-header-menu > ul > li > a*/
 .header-btn-1 {
     position: relative;
     
-    display: inline-block; /*Причина: Чтобы избавится от выпадания. Вопрос: Нужно ли сбрасывать пробелы в родителе?*/
+    display: inline-block;
     padding: 10px 15px;
     
     font-size: 16px;
     line-height: 18px;
     color: #ffffff;
     text-decoration: none;
-    
-/*    outline: 3px dashed green;*/
 }
 
 .header-btn-1::after {
@@ -248,7 +224,6 @@ label[for="rbtn-3"]:active {
     box-shadow: inset 0 3px 3px 0 #696969;
 }
 
-/*.page-header-menu > ul > li > .actual*/
 .menu .actual {
     color: #ffffff;
     text-decoration: none;
@@ -277,6 +252,8 @@ label[for="rbtn-3"]:active {
     visibility: hidden;
     list-style: none;
     
+    -webkit-transition: all 0.3s ease-in-out;
+    
     transition: all 0.3s ease-in-out;
 }
 
@@ -300,14 +277,11 @@ label[for="rbtn-3"]:active {
 }
 
 .sub-menu-tuggle:hover .sub-menu {
-/*    display: block;*/
     
     opacity: 1;
     visibility: visible;
     
 }
-
-/*Стили состояний выпадашки.Начало*/
 
 .sub-menu a:hover {
     
@@ -328,16 +302,14 @@ label[for="rbtn-3"]:active {
     background-color: #d07058;
 }
 
-/*Стили состояний выпадашки.Конец*/
-
-/*Стили состояния пунктов меню.Конец*/
-
 .user-block {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-/*    flex-wrap: wrap;*/
-    flex-direction: column;
-/*    align-content: flex-start;*/
-/*    justify-content: flex-end;*/
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     
     font-size: 14px;
     line-height: 16px;
@@ -346,20 +318,22 @@ label[for="rbtn-3"]:active {
     margin-left: auto;
     margin-top: 10px;
     width: 265px;
-    
-/*    outline: 2px dashed red;*/
 }
 
 .user-block-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 265px;
 }
 
 .header-btn-2 {
     position: relative;
     
-    padding: 11px 15px; /*Чтобы компенсировать разницу в line-height*/
+    padding: 11px 15px;
     padding-left: 40px;
     border-width: 0;
     
@@ -382,21 +356,13 @@ label[for="rbtn-3"]:active {
     left: 15px;
     top: 9px;
     
-    content: '';
+    content: "";
     
     width: 21px;
     height: 20px;
     
-/*    outline: 1px dashed black;*/
     background-image: url("../img/sprytes/spritesheet-3.png");
 }
-
-/*
-.search-btn::before {
-    width: 200px;
-    height: 200px;
-}
-*/
 
 .search-btn::before {
     left: 12px;
@@ -461,6 +427,8 @@ label[for="rbtn-3"]:active {
     visibility: hidden;
     opacity: 0;
     
+    -webkit-transition: all 0.3s ease-in-out;
+    
     transition: all 0.3s ease-in-out;
 }
 
@@ -488,6 +456,8 @@ label[for="rbtn-3"]:active {
     
     visibility: hidden;
     opacity: 0;
+    
+    -webkit-transition: all 0.2s ease-out;
     
     transition: all 0.2s ease-out;
 }
@@ -520,6 +490,8 @@ label[for="rbtn-3"]:active {
     visibility: hidden;
     opacity: 0;
     
+    -webkit-transition: all 0.3s ease-in-out;
+    
     transition: all 0.3s ease-in-out;
 }
 
@@ -550,6 +522,8 @@ label[for="rbtn-3"]:active {
     
     visibility: hidden;
     opacity: 0;
+    
+    -webkit-transition: all 0.2s ease-out;
     
     transition: all 0.2s ease-out;
 }
@@ -604,10 +578,10 @@ label[for="rbtn-3"]:active {
     visibility: hidden;
     opacity: 0;
     
+    -webkit-transition: all 0.3s ease-in-out;
+    
     transition: all 0.3s ease-in-out;
 }
-
-/*Разметка списка товара.Н*/
 
 .basket-table {
     font-size: 13px;
@@ -617,6 +591,8 @@ label[for="rbtn-3"]:active {
 }
 
 .basket-tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     
     margin-bottom: 20px;
@@ -650,11 +626,13 @@ label[for="rbtn-3"]:active {
 }
 
 .basket-tr .cross-it-out::before {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .basket-tr .cross-it-out::after {
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 .basket-tr .disabled {
@@ -668,8 +646,6 @@ label[for="rbtn-3"]:active {
 }
 
 .basket-tr .name {
-/*    display: inline;*/
-    
     width: 215px;
     padding-top: 10px;
 }
@@ -683,12 +659,17 @@ label[for="rbtn-3"]:active {
     margin-right: 15px;
 }
 
-/*Разметка списка товара.К*/
-
 .basket-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
 }
 
 .basket-controls span {
@@ -696,121 +677,6 @@ label[for="rbtn-3"]:active {
     
     font-weight: bold;
 }
-
-/*Разкоментировать позже
-.basket-pop-up > span {
-    margin: 10px 0;
-    
-    font-weight: bold;
-}
-
-.basket-pop-up a:not(.btn):hover {
-    color: #ffbc9e;
-}
-*/
-
-/*
-.basket-pop-up table {
-    display: flex;
-}
-*/
-
-/*
-.basket-table-preview {
-    padding: 0 15px;
-}
-
-.basket-table-name {
-    width: 210px;
-}
-
-.basket-table-weight {
-    padding: 0 30px;
-}
-*/
-/*
-.basket-table {
-    display: flex;
-    flex-wrap: wrap;
-
-    border-bottom: 1px solid #cacac7;
-}
-
-.basket-tr {
-    display: flex;
-    align-items: center;
-
-    width: 510px;
-    margin-bottom: 20px;
-}
-
-.basket-tr .cross-it-out {
-    position: relative;
-
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    padding: 0;
-    border: none;
-
-    background-color: transparent;
-}
-
-.basket-tr .cross-it-out::before,
-.basket-tr .cross-it-out::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    top: 4px;
-
-    width: 15px;
-    height: 2px;
-
-    background-color: #000000;
-    cursor: pointer;
-}
-
-.basket-tr .cross-it-out::before {
-    transform: rotate(45deg);
-}
-
-.basket-tr .cross-it-out::after {
-    transform: rotate(-45deg);
-}
-
-.basket-tr .preview {
-    margin: 0 15px;
-}
-
-.basket-tr .name {
-    display: inline-block;
-    max-width: 240px;
-    border: none;
-    margin-right: auto;
-}
-
-.basket-tr .weight {
-    margin-left: auto;
-    margin-right: 30px;
-}
-
-.basket-tr .disabled {
-    color: #a6a6a5;
-}
-
-.basket-tr  .basket-price {
-    margin-right: 20px;
-}
-*/
-
-/*
-.basket-pop-up table {
-    display: flex;
-}
-*/
-
-
 
 .search:hover .search-pop-up,
 .login:hover .login-pop-up,
@@ -822,9 +688,18 @@ label[for="rbtn-3"]:active {
 .user-block-contacts {
     position: relative;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
     
     font-weight: bold;
 }
@@ -837,30 +712,6 @@ label[for="rbtn-3"]:active {
     line-height: 24px;
 }
 
-/*Контакты В1
-.user-block-contacts {
-    margin-top: 18px;
-    width: 175px;
-    
-    position: relative;
-}
-
-
-.user-block-contacts p {
-    margin: 0;
-}
-
-.user-block-contacts span {
-    font-size: 22px;
-    line-height: 24px;
-    font-weight: bold;
-    
-    position: absolute;
-}
-*/
-
-/*Общие стили.Футер*/ 
-
 .page-footer {
     color: #ffffff;
     font-size: 13px;
@@ -869,15 +720,25 @@ label[for="rbtn-3"]:active {
 }
 
 .page-footer .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .footer-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     
-    flex-basis: 190px;
+    -ms-flex-preferred-size: 190px;
+    
+        flex-basis: 190px;
     margin-top: 35px;
     margin-bottom: 30px;
 }
@@ -924,10 +785,16 @@ label[for="rbtn-3"]:active {
 }
 
 .footer-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     
-    flex-basis: 310px;
+    -ms-flex-preferred-size: 310px;
+    
+        flex-basis: 310px;
     margin-top: 35px;
     margin-bottom: 30px;
 }
@@ -969,8 +836,6 @@ label[for="rbtn-3"]:active {
     margin: 0;
 }
 
-/*Сквозные элементы.Начало*/
-
 .h2 {
     margin: 0;
     
@@ -990,7 +855,7 @@ label[for="rbtn-3"]:active {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
-.hidden-container { /*Стили оберток выпадашек*/
+.hidden-container {
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
@@ -1007,19 +872,20 @@ label[for="rbtn-3"]:active {
     font-weight: normal;
     border: 1px solid #d3d3d2;
     
-/*    box-shadow: 0 0 0 1px #d3d3d2;*/
     border-radius: 5px;
 }
 
-.hidden-container .btn { /*Стили оберток выпадашек*/
+.hidden-container .btn {
     border-radius: 20px / 25px;
 }
 
 .hidden-container input:hover {
-/*    box-shadow: 0 0 0 1px #c7c6c5;*/
+    box-shadow: 0 0 0 1px #d3d3d2;
 }
 
-/*Cтили состояния ссылок. Начало*/
+.hidden-container input:focus {
+    box-shadow: none;
+}
 
 .a-db /*a for dark background*/ {
     color: #ffffff;
@@ -1028,7 +894,7 @@ label[for="rbtn-3"]:active {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.a-db:hover /*a for dark background*/ {
+.a-db:hover {
     color: #ffbc9e;
     text-decoration: none;
     
@@ -1042,51 +908,15 @@ label[for="rbtn-3"]:active {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.a-lb:hover /*a for dark background*/ {
+.a-lb:hover {
     color: #e84d37;
     text-decoration: none;
     
     border-bottom: 1px solid rgba(232, 77, 55, 0.2);
 }
 
-/*
-a {
-    color: #ffffff;
-    text-decoration: none;
-    
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-a:hover {
-    color: #ffbc9e;
-}
-
-a:active {
-    color: #ffbc9e;
-}
-*/
-
-/*
-.hidden-container a,
-.holder-2 a {
-    color: #000000;
-}
-
-.hidden-container a:hover,
-.holder-2 a:hover {
-    color: #ffbc9e;
-}
-
-.hidden-container a:active,
-.holder-2 a:active {
-    color: #ffbc9e;
-}
-*/
-
-/*Cтили состояния ссылок. Конец*/
-
 .btn {
-    display: inline-block; /*Нужен ли фикс с удалением пробелов?*/
+    display: inline-block;
     padding: 10px 20px;
     
     color: #ffffff;
@@ -1094,8 +924,8 @@ a:active {
     line-height: 24px;
     text-decoration: none;
     
-/*    text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);*/
     background-color: #ed5b3d;
+    background-image: -webkit-linear-gradient(bottom, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
     background-image: linear-gradient(0deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
     border: none;
     border-radius: 25px;
@@ -1103,18 +933,18 @@ a:active {
 }
 
 .btn:hover {
-    /*Rак зделать дополнительную прозрачность?*/
     color: #ffffff;
+    
+    background-image: -webkit-linear-gradient(top, rgb(245,134,105) 0%, rgb(236,111,94) 100%);
     
     background-image: linear-gradient(180deg, rgb(245,134,105) 0%, rgb(236,111,94) 100%);
 }
 
 .btn:active {
     box-shadow: inset 0 2px 2px 0 #9e4334;
+    background-image: -webkit-linear-gradient(bottom, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
     background-image: linear-gradient(0deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
 }
-
-/*Иконки товаров*/
 
 .popular-item,
 .catalog-item {
@@ -1129,16 +959,19 @@ a:active {
 .popular-item-hidden-btn {
     position: absolute;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     
     width: 267px;
     margin-top: 10px;
     
     opacity: 0;
     visibility: hidden;
-    
-/*    transition: 0.2s;*/
 }
 
 .popular-item .btn,
@@ -1153,22 +986,20 @@ a:active {
     text-decoration: inherit;
 }
 
-/*
-.popular-item-hidden-btn {
-    display: none;
-}
-*/
-
 .popular-item:hover .popular-item-hidden-btn,
 .catalog-item:hover .popular-item-hidden-btn {
     position: absolute;
     
+    display: -webkit-box;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    justify-content: space-around;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     
     width: 267px;
     margin-top: 10px;
-/*    margin-bottom: 20px;*/
     
     opacity: 1;
     visibility: visible;
@@ -1208,67 +1039,24 @@ a:active {
     margin-bottom: -30px;
 }
 
-/*Bконки товаров.Конец*/
-
-/*Crвозные элементы.Конец*/
-
-/*При задании ширины дочерним элементам с помощью flex-basis свойство не срабаывает, почему?*/
-
-/*
-.footer-social {
-    display: flex;
-    justify-content: space-between;
-    
-    flex-basis: 190px;
-    width: 190px;
-    
-    outline: 2px dashed red;
-}
-
-.footer-menu {
-    display: flex;
-    flex-direction: column;
-    
-    flex-basis: 310px;
-}
-*/
-
-/*
-.footer-copyright {
-    width: 190px;
-}
-*/
-
-/*
-.footer-menu ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    
-    width: 310px;
-    padding: 0;
-    margin: 0;
-    
-    list-style: none;
-}
-*/
-
-/*Старая версия футера. Конец*/
-
-/*Стили index.html*/
-
 .holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     
     margin: 40px 0;
-    
-/*    outline: 2px dashed black;*/
 }
 
 .holder-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     
     color: #ffffff;
     font-size: 18px;
@@ -1276,8 +1064,13 @@ a:active {
 }
 
 .holder-1 .fill {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .holder-1 .fill:nth-of-type(1) {
@@ -1294,16 +1087,16 @@ a:active {
 }
 
 .holder-1 .btn {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
 
 .fill {
-    flex-basis: 520px;
+    -ms-flex-preferred-size: 520px;
+        flex-basis: 520px;
     padding: 20px;
     
     border-radius: 15px;
-    
-/*    outline: 2px dashed red;*/
 }
 
 .holder-2 {
@@ -1322,8 +1115,11 @@ a:active {
 
 .holder-2 .fill:nth-of-type(2) {
     box-sizing: border-box;
-    flex-basis: 560px;
+    -ms-flex-preferred-size: 560px;
+        flex-basis: 560px;
     padding: 6px;
+    
+    background-image: -webkit-repeating-linear-gradient( 135deg, #ffffff 7px, #fe9e90 7px, #fe9e90 14px, #ffffff 14px, #ffffff 21px, #92cdff 21px, #92cdff 28px, #ffffff 28px, #ffffff 35px);
     
     background-image: repeating-linear-gradient( -45deg, #ffffff 7px, #fe9e90 7px, #fe9e90 14px, #ffffff 14px, #ffffff 21px, #92cdff 21px, #92cdff 28px, #ffffff 28px, #ffffff 35px);
 }
@@ -1363,6 +1159,8 @@ a:active {
     visibility: hidden;
     opacity: 0;
     
+    -webkit-transition: all 0.2s ease-out;
+    
     transition: all 0.2s ease-out;
 }
 
@@ -1399,8 +1197,9 @@ a:active {
 }
 
 .form-spam {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-/*    margin-bottom: 15px;*/
 }
 
 .form-spam input {
@@ -1418,13 +1217,15 @@ a:active {
 }
 
 .popular {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     margin-bottom: 40px;
     
     color: #ffffff;
-    
-/*    outline: 2px dashed black;*/
 }
 
 .popular-item {
@@ -1488,10 +1289,16 @@ a:active {
 }
 
 .features-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
     
     min-height: 180px;
     margin-top: 27px;
@@ -1518,8 +1325,7 @@ a:active {
     
     width: 50px;
     height: 50px;
-    
-/*    outline: 2px dashed black;*/
+
     background: url("../img/sprytes/spritesheet-3.png");
 }
 
@@ -1545,14 +1351,13 @@ a:active {
 
 .location {
     position: relative;
-    /*Сомнительный костыль*/
     right: 27px;
 }
 
 .contacts {
     position: absolute;
     top: 65px;
-    right: -27px;/*Последствия сомнительного костыля*/
+    right: -27px;
     
     width: 250px;
     padding: 25px;
@@ -1597,7 +1402,6 @@ a:active {
     
     background-color: #f8f7f4;
     border-radius: 10px;
-/*    outline: 1000px solid rgba(0, 0, 0, 0.5);*/
 }
 
 .modal-exit {
@@ -1616,7 +1420,7 @@ a:active {
 
 .modal-exit::before,
 .modal-exit::after {
-    content: '';
+    content: "";
     
     position: absolute;
     right: 0;
@@ -1628,54 +1432,23 @@ a:active {
 }
 
 .modal-exit::before {
-    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .modal-exit::after {
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
-
-/*
-.modal-exit::before {
-    content: '';
-    position: absolute;
-    
-    width: 22px;
-    height: 22px;
-    
-    border-left: 2px solid #000000; 
-    
-    transform: translate(-4px, -3px) rotate(45deg);
-}
-
-.modal-exit::after {
-    content: '';
-    position: absolute;
-    
-    width: 22px;
-    height: 22px;
-    
-    border-left: 2px solid #000000; 
-    
-    transform: translate(-4px, -18px) rotate(-45deg);
-}
-*/
-
-/* Не видит элемент
-.modal-exit::before {
-    content: "";
-    
-    height: 20px;
-    width: 20px;
-    border-bottom: 2px solid #000000;
-    
-    background-color: #000000;
-}
-*/
 
 .modal-feedback-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .modal-feedback-form input,
@@ -1731,6 +1504,8 @@ a:active {
     visibility: hidden;
     opacity: 0;
     
+    -webkit-transition: all 0.2s ease-out;
+    
     transition: all 0.2s ease-out;
 }
 
@@ -1748,38 +1523,6 @@ a:active {
     opacity: 1;
 }
 
-/*
-.modal-feedback-form input:nth-of-type(1)::after {
-    content: "";
-    
-    position: absolute;
-    
-    width: 20px;
-    height: 20px;
-    
-    background-color: #000000;
-}
-*/
-
-/*
-.modal-feedback-form input::before {
-    content: "Rerwrwrwerwerwre";
-    
-    position: absolute;
-    top: 0;
-    left: 0;
-    
-    display: inline-block;
-    height: 20px;
-}
-
-.modal-feedback-form input:nth-of-type(1)::before {
-    content: "Как вас зовут?";
-}
-*/
-
-/*Скрываем плейсхолдер.Н*/
-
 .modal-feedback-form input:focus::-webkit-input-placeholder {
     color: transparent;
 }
@@ -1792,8 +1535,6 @@ a:active {
 .modal-feedback-form input:focus:-ms-input-placeholder {
     color: transparent;
 }
-
-/*Скрываем плейсхолдер.К*/
 
 .modal-feedback span {
     display: block;
@@ -1816,10 +1557,9 @@ a:active {
 }
 
 .modal-feedback-form .btn {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
 }
-
-/*Cтили catalog.html*/
 
 .breadcrumbs {
     font-size: 14px;
@@ -1828,6 +1568,8 @@ a:active {
 }
 
 .breadcrumbs ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
     margin: 0;
@@ -1843,15 +1585,23 @@ a:active {
 }
 
 .catalog {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     
     color: #ffffff;
 }
 
 .catalog-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     
     min-height: 130px;
     margin-top: 35px;
@@ -1878,8 +1628,12 @@ a:active {
 }
 
 .catalog-controls-floor {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 860px;
 }
 
@@ -1892,33 +1646,24 @@ a:active {
 }
 
 .catalog-controls-tuggle {
-/*    padding: 10px 15px;*/
     padding: 6px 15px;
-/*    margin-right: 15px;*/
     
     background-color: rgba(255, 255, 255, 0.3);
 }
 
 .tuggle-select {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
     box-sizing: border-box;
     width: 195px;
     height: 35px;
-    
-/*
-    background-image: url(../img/icon-mark.png);
-    background-repeat: no-repeat;
-    background-position: 93% 52%;
-*/
 }
-
-/*
-.tuggle-select {
-    
-}
-*/
 
 .tuggle-select select {
     color: #ffffff;
@@ -1949,12 +1694,6 @@ a:active {
     background-color: #ffffff;
 }
 
-/*
-.tuggle-select option-container {
-    padding-top: 5px;
-}
-*/
-
 .tuggle-select option {
     color: #000000;
     
@@ -1973,7 +1712,6 @@ a:active {
 }
 
 .label-range input {
-    /*width: 25px; - Для живого input*/
     width: 0;
     padding: 0;
     border: none;
@@ -2027,34 +1765,15 @@ a:active {
     right: 30%;
 }
 
-/*
-Проблемы с кординатами
-.scale-tuggle-min {
-    top: 0;
-}
-
-.scale-tuggle-max {
-    right: 0;
-}
-*/
-
-
-/*
-.tuggle-range {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    
-    box-sizing: border-box;
-    width: 215px;
-    height: 40px;
-}
-*/
-
 .tuggle-rbtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
     
     box-sizing: border-box;
     width: 415px;
@@ -2113,15 +1832,18 @@ input[type~="radio"]:checked + label::before {
 
 
 .tuggle-cbx {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     
     box-sizing: border-box;
     width: 700px;
     height: 35px;
 }
 
-/*В разработке(Пока успешно)*/
 .tuggle-cbx input {
     display: none;
 }
@@ -2164,8 +1886,6 @@ input[type~="radio"]:checked + label::before {
     opacity: 0.5;
 }
 
-/*Оживляяем псевдо-чек-боксы. Начало*/
-
 input[type~="checkbox"]:checked + label::after {
     content: "";
     
@@ -2178,23 +1898,14 @@ input[type~="checkbox"]:checked + label::after {
     border-left: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
     
-    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    
+            transform: rotate(-45deg);
 }
-
-/*Оживляяем псевдо-чек-боксы. Конец*/
-
-/*Стили состояний чек-боксов. Начало*/
-
-/*Нет реакции
-.tuggle-cbx-item:hover ~ label::before {
-    border: 3px solid #ffffff;
-}
-*/
-
-/*Стили состояний чек-боксов. Конец*/
 
 .catalog-controls-floor button {
-    align-self: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     
     box-sizing: border-box;
     height: 35px;
@@ -2222,9 +1933,14 @@ input[type~="checkbox"]:checked + label::after {
 }
 
 .catalog-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
 }
 
 .catalog-item {
@@ -2232,141 +1948,17 @@ input[type~="checkbox"]:checked + label::after {
     width: 267px;
     
     margin-bottom: 40px;
-    
-/*
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 75px;
-    
-    margin-top: -5px;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: -75px;
-*/
 }
 
-
-
-/* Список товаров V1
-.catalog-container {
-    font-size: 0;
-}
-
-.catalog-item {
-    display: inline-block;
-
-    width: 267px;
-    margin-right: 26px;
-    margin-bottom: 40px;
-
-    vertical-align: top;
-    font-size: 45px;
-    line-height: 45px;
-}
-
-.catalog-item:nth-of-type(4n) {
-    margin-right: 0;
-}
-
-.catalog-item:nth-of-type(n+8) {
-    margin-bottom: 0;
-}
-*/
-
-
-
-/*
-Почему это не сработало?
 .pegination {
-    display: inline-block;
-    
-    text-align: right;
-}
-*/
-
-/*
-А почему это?
-.pegination {
-    float: right;
-}
-
-.pegination::after {
-    content: '';
-    clear: both;
-}
-*/
-
-/*Пегинация списком
-.pegination {
-    font-size: 16px;
-    line-height: 18px;
-    font-weight: 500;
-}
-
-.pegination ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    padding: 0;
-    margin: 0;
-    
-    list-style: none;
-    
-    outline: 1px dashed white;
-}
-
-.pegination li {
-    width: 20px;
-    height: 20px;
-    
-    text-align: center;
-    
-    outline: 2px dashed red;
-}
-
-.pegination a {
-    outline: 2px dashed black;
-}
-
-.pegination .next, 
-.pegination .prev {
-    position: relative;
-}
-
-.pegination .next::before {
-    content: '';
-    
-    position: absolute;
-    
-    width: 8px;
-    height: 8px;
-    
-    border-bottom: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
-    
-    transform: translate(-7px, 3px) rotate(225deg);
-}
-
-.pegination .prev::before {
-    content: '';
-    
-    position: absolute;
-    
-    width: 8px;
-    height: 8px;
-    
-    border-bottom: 3px solid #ffffff;
-    border-left: 3px solid #ffffff;
-    
-    transform: translate(-4px, 3px) rotate(45deg);
-}
-*/
-
-
-/*Пегинация без списка*/
-.pegination {
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
     width: 190px;
     margin-top: 85px;
     margin-bottom: 35px;
@@ -2394,7 +1986,7 @@ input[type~="checkbox"]:checked + label::after {
 }
 
 .pegination .next::before {
-    content: '';
+    content: "";
     
     position: absolute;
     
@@ -2404,11 +1996,13 @@ input[type~="checkbox"]:checked + label::after {
     border-bottom: 3px solid #ffffff;
     border-left: 3px solid #ffffff;
     
-    transform: translate(-7px, 3px) rotate(225deg);
+    -webkit-transform: translate(-7px, 3px) rotate(225deg);
+    
+            transform: translate(-7px, 3px) rotate(225deg);
 }
 
 .pegination .prev::before {
-    content: '';
+    content: "";
     
     position: absolute;
     
@@ -2418,7 +2012,9 @@ input[type~="checkbox"]:checked + label::after {
     border-bottom: 3px solid #ffffff;
     border-left: 3px solid #ffffff;
     
-    transform: translate(-4px, 3px) rotate(45deg);
+    -webkit-transform: translate(-4px, 3px) rotate(45deg);
+    
+            transform: translate(-4px, 3px) rotate(45deg);
 }
 
 .pegination a:not(.disabled):not(.active):hover {
@@ -2448,18 +2044,3 @@ input[type~="checkbox"]:checked + label::after {
     border-radius: 50%;
     cursor: context-menu;
 }
-
-/*
-1. Исользовать дополнительные стили для сеток всегда.
-2. Не использовать общие стили.
-3. Создать иерархию классов.
-4. Спрайты делаем в последнюю очередь
-*/
-
-/*
-Заметки:
-1. ---Строка 190: Разобрать отличия align-content и align-item.
-5. 1013: Не могу отцентровать номер страницы.
-21. --Настроить правильный опасити
-28. Отступ для опшин
-*/
