@@ -31,6 +31,16 @@ input[name="slider-toggle"] {
     display: none;
 }
 
+.site-wrapper::before {
+    background-image: url("../img/ice-2.png");
+    visibility: hidden;
+}
+
+.site-wrapper::after {
+    background-image: url("../img/ice-3.png");
+    visibility: hidden;
+}
+
 #rbtn-1:checked ~ .site-wrapper .content-wrapper {
 /*
     background-image: url("../img/ice-1.png");
@@ -103,6 +113,11 @@ label[for="rbtn-3"]:hover {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+label[for="rbtn-1"]:active,
+label[for="rbtn-2"]:active,
+label[for="rbtn-3"]:active {
+    background-color: #ffffff;
+}
 
 #slide-1,
 #slide-2,
@@ -203,7 +218,7 @@ label[for="rbtn-3"]:hover {
 /*    outline: 3px dashed green;*/
 }
 
-.header-btn-1::before {
+.header-btn-1::after {
     content: "";
     
     position: absolute;
@@ -242,8 +257,13 @@ label[for="rbtn-3"]:hover {
     border-radius: 50px / 50px;
 }
 
+.actual::after {
+    display: none;
+}
+
 .sub-menu {
     position: absolute;
+    z-index: 20;
     
     padding: 0;
     margin: 0;
@@ -412,6 +432,12 @@ label[for="rbtn-3"]:hover {
     position: relative;
 }
 
+.search-btn,
+.login-btn,
+.active-basket-btn {
+    cursor: pointer;
+}
+
 .search-btn:hover,
 .login-btn:hover,
 .active-basket-btn {
@@ -438,6 +464,48 @@ label[for="rbtn-3"]:hover {
     transition: all 0.3s ease-in-out;
 }
 
+.search-pop-up input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.search-pop-up input:focus::-moz-placeholder {
+    color: transparent;
+}
+.search-pop-up input:focus:-moz-placeholder {
+    color: transparent;
+}
+.search-pop-up input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.search-pop-up label {
+    position: absolute;
+    left: 25px;
+    top: 5px;
+    
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.2s ease-out;
+}
+
+.search-pop-up input:valid + label {
+    color: #999999;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
+.search-pop-up input:focus + label {
+    color: #5b9ddf;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
 .login-pop-up {
     position: absolute;
     right: 0;
@@ -459,9 +527,60 @@ label[for="rbtn-3"]:hover {
     margin-bottom: 20px;
 }
 
+.login-pop-up input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.login-pop-up input:focus::-moz-placeholder {
+    color: transparent;
+}
+.login-pop-up input:focus:-moz-placeholder {
+    color: transparent;
+}
+.login-pop-up input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.login-pop-up label {
+    position: absolute;
+    left: 25px;
+    
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.2s ease-out;
+}
+
+.login-pop-up label[for="login-email"] {
+    top: 5px;
+}
+
+.login-pop-up label[for="login-password"] {
+    top: 70px;
+}
+
+.login-pop-up input:valid + label {
+    color: #999999;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
+.login-pop-up input:focus + label {
+    color: #5b9ddf;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
 .login-pop-up button {
     display: block;
     float: left;
+    
+    cursor: pointer;
 }
 
 .login-pop-up a {
@@ -1210,11 +1329,55 @@ a:active {
 }
 
 .holder-2 .fill-content {
+    position: relative;
+    
     padding: 28px 18px;
     width: 510px;
     
     background-color: #f8f7f4;
     border-radius: inherit;
+}
+
+.fill-content input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+.fill-content input:focus::-moz-placeholder {
+    color: transparent;
+}
+.fill-content input:focus:-moz-placeholder {
+    color: transparent;
+}
+.fill-content input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+.form-spam label {
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    
+    font-size: 11px;
+    line-height: 13px;
+    font-weight: normal;
+    
+    visibility: hidden;
+    opacity: 0;
+    
+    transition: all 0.2s ease-out;
+}
+
+.form-spam input:valid + label {
+    color: #999999;
+    
+    visibility: visible;
+    opacity: 1;
+}
+
+.form-spam input:focus + label {
+    color: #5b9ddf;
+    
+    visibility: visible;
+    opacity: 1;
 }
 
 .holder-2 b {
@@ -1764,13 +1927,13 @@ a:active {
      -webkit-appearance: none;
     
     border: none;
-    
+    outline: none;
     background-color: transparent;
     background-image: url(../img/icon-mark.png);
     background-repeat: no-repeat;
     background-position: right 10px;
     
-    outline: none;
+    cursor: pointer;
 }
 
 .tuggle-select:hover select {
@@ -2039,6 +2202,8 @@ input[type~="checkbox"]:checked + label::after {
     margin-bottom: 4px;
     
     font-weight: 500;
+    
+    cursor: pointer;
 }
 
 .catalog-controls-floor button:hover {
