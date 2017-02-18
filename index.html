@@ -48,7 +48,7 @@
                                 <div class="login">
                                     <button class="login-btn header-btn-2" type="button">Вход</button>
                                     <form class="login-pop-up hidden-container" action="#" method="post">
-                                        <input type="email" name="login-email" id="login-email" placeholder="Электронная почта" required>
+                                        <input type="text" name="login-email" id="login-email" placeholder="Электронная почта" required>
                                         <label for="login-email">Электронная почта</label>
                                         <input type="password" name="login-password" id="login-password" placeholder="Пароль" required>
                                         <label for="login-password">Пароль</label>
@@ -176,7 +176,7 @@
                         <div class="fill-content">
                             <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </p>
                             <form class="form-spam" action="#" method="post">
-                                <input type="email" name="email" id="subscribe" placeholder="Электронная почта" required>
+                                <input type="text" name="email" id="subscribe" placeholder="Электронная почта" required>
                                 <label for="subscribe">Электронная почта</label>
                                 <button class="btn" type="submit" name="subscribe-btn">Отправить</button>
                             </form>
@@ -242,13 +242,14 @@
             <form class="modal-feedback-form" action="#" method="post">
                 <input type="text" name="client" id="fb-name" placeholder="Как вас зовут?" required>
                 <label for="fb-name">Как вас зовут?</label>
-                <input type="email" name="email" id="fb-email" placeholder="Ваша почта для ответа?" required>
+                <input type="text" name="email" id="fb-email" placeholder="Ваша почта для ответа?" required>
                 <label for="fb-email">Ваша почта для ответа?</label>
                 <textarea rows="6" cols="40" placeholder="Напишите что-нибудь..."></textarea>
                 <button class="btn" type="submit" name="feedback-btn">Отправить</button>
             </form>
         </div>
     </div>
+    <script src="js/script.js" async></script> 
 </body>
 
 </html>
