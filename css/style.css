@@ -302,15 +302,7 @@ label[for="rbtn-3"]:active {
     background-color: #d07058;
 }
 
-.user-block {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    
+.user-block { 
     font-size: 14px;
     line-height: 16px;
     font-weight: normal;
@@ -324,10 +316,9 @@ label[for="rbtn-3"]:active {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
     width: 265px;
+    
+    font-size: 0;
 }
 
 .header-btn-2 {
@@ -344,10 +335,14 @@ label[for="rbtn-3"]:active {
     
     border-radius: 50px / 50px;
     background-color: rgba(255, 255, 255, 0.3);
+    outline: none;
 }
 
 .search-btn {
-    padding: 11px 20px;
+    padding: 0;
+    width: 42px;
+    height: 38px;
+    
     font-size: 0;
 }
 
@@ -396,6 +391,16 @@ label[for="rbtn-3"]:active {
 .login,
 .basket {
     position: relative;
+    
+    display: inline-block;
+    margin-left: auto;
+    
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.search {
+    margin-left: 0;
 }
 
 .search-btn,
@@ -608,6 +613,8 @@ label[for="rbtn-3"]:active {
     border: none;
 
     background-color: transparent;
+    outline: none;
+    cursor: pointer;
 }
 
 .basket-tr .cross-it-out::before,
@@ -688,25 +695,20 @@ label[for="rbtn-3"]:active {
 .user-block-contacts {
     position: relative;
     
-    display: -webkit-box;
-    
-    display: -ms-flexbox;
-    
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    
     font-weight: bold;
+    text-align: right;
+}
+
+.user-block-contacts p {
+    display: block;
 }
 
 .user-block-contacts span {
     position: absolute;
-    bottom: -15px;
+    bottom: -25px;
+    right: 0;
+    
+    display: block;
     
     font-size: 22px;
     line-height: 24px;
@@ -865,10 +867,11 @@ label[for="rbtn-3"]:active {
 .hidden-container input {
     box-sizing: border-box;
     width: 100%;
+    height: 46px;
     padding: 10px;
     
     font-size: 14px;
-    line-height: 24px;
+/*    line-height: 24px;*/
     font-weight: normal;
     border: 1px solid #d3d3d2;
     
@@ -1117,6 +1120,7 @@ label[for="rbtn-3"]:active {
     box-sizing: border-box;
     -ms-flex-preferred-size: 560px;
         flex-basis: 560px;
+    max-width: 560px;
     padding: 6px;
     
     background-image: -webkit-repeating-linear-gradient( 135deg, #ffffff 7px, #fe9e90 7px, #fe9e90 14px, #ffffff 14px, #ffffff 21px, #92cdff 21px, #92cdff 28px, #ffffff 28px, #ffffff 35px);
@@ -1352,12 +1356,18 @@ label[for="rbtn-3"]:active {
 .location {
     position: relative;
     right: 27px;
+    
+    min-width: 1200px;
+    min-height: 430px;
+    
+    background-image: url("../img/map-pin-short.jpg");
+    background-repeat: no-repeat;
 }
 
 .contacts {
     position: absolute;
     top: 65px;
-    right: -27px;
+    right: 27px;
     
     width: 250px;
     padding: 25px;
@@ -1384,7 +1394,15 @@ label[for="rbtn-3"]:active {
     
     width: 10000px;
     height: 10000px;
+    
+    visibility: hidden;
+    opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
 }
 
 .modal-feedback {
@@ -1416,6 +1434,8 @@ label[for="rbtn-3"]:active {
     font-size: 0;
     
     background-color: transparent;
+    outline: none;
+    cursor: pointer;
 }
 
 .modal-exit::before,
@@ -1451,9 +1471,16 @@ label[for="rbtn-3"]:active {
             flex-direction: column;
 }
 
+.modal-feedback-form input {
+    height: 48px;
+    
+    line-height: 18px;
+}
+
 .modal-feedback-form input,
 .modal-feedback-form textarea {
     box-sizing: border-box;
+/*    height: 48px;*/
     padding: 10px 15px;
     border: 1px solid #d3d3d2;
     
@@ -1492,7 +1519,7 @@ label[for="rbtn-3"]:active {
 
 .modal-feedback-form label[for="fb-email"] {
     position: absolute;
-    top: 52px;
+    top: 54px;
     left: 15px;
 }
 
@@ -1663,30 +1690,35 @@ label[for="rbtn-3"]:active {
     box-sizing: border-box;
     width: 195px;
     height: 35px;
+    padding: 0;
 }
 
 .tuggle-select select {
     color: #ffffff;
     font: inherit;
     font-weight: 500;
-     -webkit-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 6px 25px;
+/*    padding-left: 10px;*/
     
     border: none;
     outline: none;
     background-color: transparent;
     background-image: url(../img/icon-mark.png);
     background-repeat: no-repeat;
-    background-position: right 10px;
+    background-position: 165px center;
     
     cursor: pointer;
 }
 
 .tuggle-select:hover select {
     color: #000000;
+    text-align: left;
     
     background-image: url(../img/icon-mark-alt.png);
     background-repeat: no-repeat;
-    background-position: right 10px;
+    background-position: 165px center;
 
 }
 
