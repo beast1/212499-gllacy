@@ -61,6 +61,8 @@ input[name="slider-toggle"] {
     position: absolute;
     left: 0;
     bottom: 15px;
+    
+    vertical-align: middle;
 }
 
 .slider-controls label {
@@ -164,6 +166,7 @@ label[for="rbtn-3"]:active {
     margin: 0;
     
     font-size: 0;
+    vertical-align: middle;
     
     list-style: none;
     
@@ -375,7 +378,6 @@ label[for="rbtn-3"]:active {
 .basket {
     position: relative;
     
-    display: inline-block;
     margin-left: auto;
     
     vertical-align: middle;
@@ -470,6 +472,8 @@ label[for="rbtn-3"]:active {
     height: 215px;
     padding: 20px 15px;
     margin-top: 5px;
+    
+    vertical-align: middle;
     
     visibility: hidden;
     opacity: 0;
@@ -1491,6 +1495,8 @@ label[for="rbtn-3"]:active {
     padding: 0;
     margin: 0;
     
+    vertical-align: middle;
+    
     list-style: none;
 }
 
@@ -1861,6 +1867,7 @@ input[type~="checkbox"]:checked + label::after {
     font-size: 16px;
     line-height: 18px;
     font-weight: 500;
+    vertical-align: middle;
 }
 
 .pegination a {
