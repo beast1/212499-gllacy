@@ -1571,10 +1571,10 @@ label[for="rbtn-3"]:active {
     color: #ffffff;
     font: inherit;
     font-weight: 500;
-/*
+    
     -webkit-appearance: none;
     -moz-appearance: none;
-*/
+    
     padding: 0px 25px;
     width: 100%;
     padding-left: 12px;
@@ -1583,11 +1583,9 @@ label[for="rbtn-3"]:active {
 /*    border-color: transparent;*/
     outline: none;
     background-color: transparent;
-/*
     background-image: url(../img/icon-mark.png);
     background-repeat: no-repeat;
-    background-position: 165px center;
-*/
+    background-position: 160px center;
     
     cursor: pointer;
 }
@@ -1596,11 +1594,9 @@ label[for="rbtn-3"]:active {
     color: #000000;
 /*    text-align: left;*/
     
-/*
     background-image: url(../img/icon-mark-alt.png);
     background-repeat: no-repeat;
-    background-position: 165px center;
-*/
+    background-position: 160px center;
 
 }
 
