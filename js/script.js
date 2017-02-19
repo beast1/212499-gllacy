@@ -1,7 +1,6 @@
 var btnFbOpen = document.querySelector(".contacts .btn");
 var modalFb = document.querySelector(".modal-feedback-wrapper");
 var btnFbClose1 = document.querySelector(".modal-feedback .modal-exit");
-//var modalFbContent = document.querySelector(".modal-feedback");
 
 btnFbOpen.addEventListener("click", function(event) {
     event.preventDefault();
@@ -21,8 +20,3 @@ window.addEventListener("keydown", function(event) {
         }
     }
 });
-
-//modalFbContent.addEventListener("click", function(event) {
-//    event.preventDefault();
-//    modalFb.classList.add("hidden");
-//});
