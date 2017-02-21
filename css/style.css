@@ -12,6 +12,10 @@ body {
     background-color: #849d8f;
 }
 
+.decorate-wrapper {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 650px, transparent);
+}
+
 input[name="slider-toggle"] {
     display: none;
 }
@@ -134,6 +138,10 @@ label[for="rbtn-3"]:active {
     padding: 0 27px;
 }
 
+.container.catalog {
+    box-shadow: 0 26px 0 -25px #a9bbb1;
+}
+
 .hidden {
     display: none;
 }
@@ -178,7 +186,7 @@ label[for="rbtn-3"]:active {
     position: relative;
     
     display: inline-block;
-    padding: 10px 14px;
+    padding: 9px 14px;
 /*    margin-right: -2px;*/
     
     font-size: 16px;
@@ -767,7 +775,6 @@ label[for="rbtn-3"]:active {
     flex-basis: 305px;
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: px;
 }
 
 .love {
@@ -820,7 +827,7 @@ label[for="rbtn-3"]:active {
     color: #ffffff;
     font-size: 16px;
     line-height: 22px;
-    font-weight: normal;
+    font-weight: 500;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
@@ -913,6 +920,38 @@ label[for="rbtn-3"]:active {
     background-image: linear-gradient(0deg, rgb(242,104,67) 0%, rgb(231,74,53) 100%);
 }
 
+.catalog-item {
+    width: 267px;
+    padding-left: 13px;
+    padding-top: 5px;
+    padding-right: 13px;
+    padding-bottom: 33px;
+}
+
+.catalog-item:hover {
+    position: relative;
+    z-index: 10;
+    
+    padding-bottom: 69px;
+    margin-bottom: -36px;
+    
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+}
+
+.catalog-item .name {
+    padding: 0 5px;
+}
+
+.catalog-item:nth-of-type(4n-3) {
+    margin-left: -13px;
+}
+
+.catalog-item:nth-of-type(4n) {
+    margin-right: -13px;
+}
+
 .popular-item,
 .catalog-item {
     text-align: center;
@@ -921,7 +960,7 @@ label[for="rbtn-3"]:active {
 .popular-item img,
 .catalog-item img {
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
 }
 
 .popular-item-hidden-btn {
@@ -952,19 +991,19 @@ label[for="rbtn-3"]:active {
 .popular-item:hover .popular-item-hidden-btn,
 .catalog-item:hover .popular-item-hidden-btn {
     position: absolute;
+    bottom: 20px;
     
     display: flex;
     justify-content: space-around;
     
     width: 267px;
-    margin-top: 10px;
     
     opacity: 1;
     visibility: visible;
 }
 
-.popular-item:hover,
-.catalog-item:hover {
+/*.catalog-item:hover,*/
+.popular-item:hover {
     position: relative;
     z-index: 10;
     
@@ -983,18 +1022,6 @@ label[for="rbtn-3"]:active {
     margin-left: -15px;
     margin-right: -15px;
     margin-bottom: -70px;
-}
-
-.catalog-item:hover {
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
-    
-    margin-top: -5px;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: -30px;
 }
 
 .holder {
@@ -1105,7 +1132,7 @@ label[for="rbtn-3"]:active {
 .form-spam label {
     position: absolute;
     left: 30px;
-    top: 120px;
+    top: 115px;
     
     font-size: 11px;
     line-height: 13px;
@@ -1219,8 +1246,12 @@ label[for="rbtn-3"]:active {
     font-size: 30px;
 }
 
-.popular-item:hover .price, 
-.catalog-item:hover .price {
+.catalog-item .price {
+    top: 214px;
+    left: 13px;
+}
+
+.popular-item:hover .price {
     top: 218px;
     left: 15px;
 }
@@ -1670,7 +1701,7 @@ label[for="rbtn-3"]:active {
     
     min-height: 130px;
     margin-top: 29px;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     
     font-size: 14px;
     line-height: 16px;
@@ -1999,23 +2030,24 @@ input[type~="checkbox"]:checked + label::after {
 .catalog-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+/*    justify-content: space-between;*/
 }
 
 .catalog-item {
     position: relative;
-    width: 267px;
+/*    width: 267px;*/
     
-    margin-bottom: 32px;
+/*    margin-bottom: 32px;*/
 }
 
 .pegination {
     display: flex;
     justify-content: space-between;
     align-self: flex-end;
-    width: 190px;
-    margin-top: 52px;
+    width: 200px;
+    margin-top: 48px;
     margin-bottom: 31px;
+    margin-right: -6px;
     
     font-size: 16px;
     line-height: 18px;
