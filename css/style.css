@@ -54,7 +54,7 @@ input[name="slider-toggle"] {
 .page-header-slider {
     position: relative;
     
-    margin-top: 285px;
+    margin-top: 292px;
 }
 
 .slider-controls {
@@ -71,6 +71,7 @@ input[name="slider-toggle"] {
     width: 17px;
     height: 17px;
     border: 3px solid #ffffff;
+    margin-right: 2px;
     
     border-radius: 50%;
     cursor: pointer;
@@ -113,7 +114,7 @@ label[for="rbtn-3"]:active {
 
 .slide-title + .btn {
     padding: 10px 40px;
-    margin-top: 40px;
+    margin-top: 29px;
     
     font-size: 32px;
     line-height: 44px;
@@ -140,7 +141,7 @@ label[for="rbtn-3"]:active {
 .page-header {
     color: #ffffff;
     
-    padding-top: 10px;
+    padding-top: 7px;
 }
 
 .page-header-top {
@@ -148,12 +149,13 @@ label[for="rbtn-3"]:active {
 }
 
 .logo {
-    width: 150px;
-    margin-right: 10px;
+    width: 154px;
+    height: 64px;
+    margin-right: 9px;
 }
 
 .page-header-menu {
-    margin-top: 10px;
+    margin-top: 13px;
 }
 
 .page-header-menu .menu {
@@ -176,7 +178,8 @@ label[for="rbtn-3"]:active {
     position: relative;
     
     display: inline-block;
-    padding: 10px 15px;
+    padding: 10px 14px;
+/*    margin-right: -2px;*/
     
     font-size: 16px;
     line-height: 18px;
@@ -296,7 +299,7 @@ label[for="rbtn-3"]:active {
     font-weight: normal;
     
     margin-left: auto;
-    margin-top: 10px;
+    margin-top: 16px;
     width: 265px;
 }
 
@@ -304,13 +307,15 @@ label[for="rbtn-3"]:active {
     display: flex;
     width: 265px;
     
+    
     font-size: 0;
 }
 
 .header-btn-2 {
     position: relative;
     
-    padding: 11px 15px;
+    height: 32px;
+    padding: 0px 15px;
     padding-left: 40px;
     border-width: 0;
     
@@ -320,14 +325,14 @@ label[for="rbtn-3"]:active {
     color: #ffffff;
     
     border-radius: 50px / 50px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
     outline: none;
 }
 
 .search-btn {
     padding: 0;
-    width: 42px;
-    height: 38px;
+    width: 33px;
+    height: 33px;
     
     font-size: 0;
 }
@@ -335,7 +340,7 @@ label[for="rbtn-3"]:active {
 .header-btn-2::before {
     position: absolute;
     left: 15px;
-    top: 9px;
+    top: 5px;
     
     content: "";
     
@@ -346,13 +351,23 @@ label[for="rbtn-3"]:active {
 }
 
 .search-btn::before {
-    left: 12px;
+    top: 6px;
+    left: 8px;
     
     background-position: 0px -376px;
 }
 
+.login-btn {
+    width: 90px;
+}
+
 .login-btn::before {
     background-position: 0px -319px;
+}
+
+.basket-btn {
+    width: 117px;
+    padding-left: 27px;
 }
 
 .basket-btn::before {
@@ -667,11 +682,12 @@ label[for="rbtn-3"]:active {
 
 .user-block-contacts p {
     display: block;
+    margin-top: 14px;
 }
 
 .user-block-contacts span {
     position: absolute;
-    bottom: -25px;
+    bottom: -31px;
     right: 0;
     
     display: block;
@@ -681,6 +697,8 @@ label[for="rbtn-3"]:active {
 }
 
 .page-footer {
+    margin-top: 5px;
+    
     color: #ffffff;
     font-size: 13px;
     line-height: 18px;
@@ -696,15 +714,15 @@ label[for="rbtn-3"]:active {
     display: flex;
     justify-content: space-between;
     
-    flex-basis: 190px;
-    margin-top: 35px;
+    flex-basis: 187px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .social-btn {
     width: 30px;
     height: 30px;
-    border: 5px solid rgba(255, 255, 255, 0.7);
+    border: 4px solid rgba(255, 255, 255, 0.7);
     
     font-size: 0;
     
@@ -746,9 +764,10 @@ label[for="rbtn-3"]:active {
     display: flex;
     justify-content: space-between;
     
-    flex-basis: 310px;
-    margin-top: 35px;
+    flex-basis: 305px;
+    margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: px;
 }
 
 .love {
@@ -777,7 +796,7 @@ label[for="rbtn-3"]:active {
 }
 
 .footer-copyright {
-    margin-top: 20px;
+    margin-top: 14px;
     margin-bottom: 25px;
     
     font-size: 12px;
@@ -797,7 +816,6 @@ label[for="rbtn-3"]:active {
 
 .h3 {
     display: inline;
-    margin: 0;
     
     color: #ffffff;
     font-size: 16px;
@@ -903,6 +921,7 @@ label[for="rbtn-3"]:active {
 .popular-item img,
 .catalog-item img {
     border-radius: 50%;
+    margin-bottom: 10px;
 }
 
 .popular-item-hidden-btn {
@@ -1008,7 +1027,7 @@ label[for="rbtn-3"]:active {
 }
 
 .holder-1 span {
-    margin-top: 25px;
+    margin-top: 13px;
     margin-bottom: 45px;
 }
 
@@ -1034,7 +1053,13 @@ label[for="rbtn-3"]:active {
 }
 
 .holder-2 .fill:nth-of-type(1) {
-    background: #ffffff url("../img/background-ummy-short-3.jpg") no-repeat;
+    background: #ffffff url("../img/background-ummy-short-3.jpg") no-repeat -14px -2px;
+    
+    padding: 25px 20px;
+}
+
+.holder-2 b {
+    margin-bottom: 5px;
 }
 
 .holder-2 .fill:nth-of-type(2) {
@@ -1051,12 +1076,18 @@ label[for="rbtn-3"]:active {
 .holder-2 .fill-content {
     position: relative;
     
-    padding: 28px 18px;
-    width: 510px;
+    padding: 28px 20px;
+    width: 508px;
     
     background-color: #f8f7f4;
     border-radius: inherit;
 }
+
+/*
+.fill-content p {
+    margin-bottom: 100px;
+}
+*/
 
 .fill-content input:focus::-webkit-input-placeholder {
     color: transparent;
@@ -1113,13 +1144,14 @@ label[for="rbtn-3"]:active {
 
 .holder-2 p {
     margin: 0;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     
     font-weight: normal;
 }
 
 .form-spam {
     display: flex;
+    margin-bottom: 5px;
 }
 
 .form-spam input {
@@ -1174,7 +1206,7 @@ label[for="rbtn-3"]:active {
 .price {
     position: absolute;
     left: 0;
-    top: 200px;
+    top: 213px;
     
     font-size: 45px;
     line-height: 45px;
@@ -1183,14 +1215,18 @@ label[for="rbtn-3"]:active {
     text-shadow: 0.5px 0.866px 3px rgba(49, 50, 53, 0.5);
 }
 
+.price span {
+    font-size: 30px;
+}
+
 .popular-item:hover .price, 
 .catalog-item:hover .price {
-    top: 205px;
+    top: 218px;
     left: 15px;
 }
 
 .features {  
-    padding: 30px 20px;
+    padding: 22px 20px;
     
     background: #eee0c8 url("../img/background-cross-short-2.jpg") no-repeat;
     
@@ -1202,6 +1238,7 @@ label[for="rbtn-3"]:active {
     
     font-size: 24px;
     line-height: 30px;
+    letter-spacing: 0.1px;
 }
 
 .features-container {
@@ -1210,8 +1247,8 @@ label[for="rbtn-3"]:active {
     justify-content: space-between;
     align-content: space-between;
     
-    min-height: 180px;
-    margin-top: 27px;
+    min-height: 175px;
+    margin-top: 24px;
 }
 
 .features-item {
@@ -1228,8 +1265,8 @@ label[for="rbtn-3"]:active {
 
 .features-item::before {
     position: absolute;
-    left: -56px;
-    top: -18px;
+    left: -60px;
+    top: -14px;
     
     content: "";
     
@@ -1261,22 +1298,28 @@ label[for="rbtn-3"]:active {
 
 .location {
     position: relative;
-    right: 27px;
     
     min-width: 1200px;
     min-height: 430px;
     
+    background-color: #fff;
     background-image: url("../img/map-pin-short.jpg");
     background-repeat: no-repeat;
+}
+
+.contacts-wp {
+    position: relative;
 }
 
 .contacts {
     position: absolute;
     top: 65px;
-    right: 27px;
+    right: 0;
+    z-index: 10;
     
     width: 250px;
-    padding: 25px;
+    min-height: 275px;
+    padding: 14px 25px;
     
     font-size: 14px;
     line-height: 20px;
@@ -1286,9 +1329,29 @@ label[for="rbtn-3"]:active {
     border-radius: 15px;
 }
 
+.contacts strong {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.contacts p:nth-of-type(1) {
+    margin-bottom: 18px;
+}
+
+.contacts p:nth-of-type(2) {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.contacts p:nth-of-type(3) {
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
 .contacts .btn {
     box-sizing: border-box;
     width: 100%;
+    margin-top: 16px;
     
     text-align: center;
 }
@@ -1297,6 +1360,7 @@ label[for="rbtn-3"]:active {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 51;
     
     width: 10000px;
     height: 10000px;
@@ -1304,11 +1368,27 @@ label[for="rbtn-3"]:active {
     visibility: hidden;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    
+/*    animation-name: modal-feedback-wrapper;*/
 }
 
-.visible {
+/*
+@keyframes modal-feedback-wrapper {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+*/
+
+.modal-feedback-visible {
     visibility: visible;
     opacity: 1;
+    
+    animation-name: mf-translate;
+    animation-duration: 1.5s;
 }
 
 .modal-feedback {
@@ -1316,7 +1396,7 @@ label[for="rbtn-3"]:active {
     top: 0;
     top: 50%;
     left: 50%;
-    z-index: 50;
+    z-index: 52;
     
     width: 455px;
     min-height: 425px;
@@ -1326,9 +1406,27 @@ label[for="rbtn-3"]:active {
     
     background-color: #f8f7f4;
     border-radius: 10px;
+    
+/*    animation: mf-translate 1.5s 1 linear;*/
 }
 
-.modal-exit {
+@keyframes mf-translate {
+    0% {
+        transform: translate(0, -2000px);
+    }
+    70% {
+        transform: translate(0, 30px);
+    }
+    90% {
+        transform: translate(0, -10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.modal-exit,
+.modal-back {
     position: absolute;
     right: 25px;
     top: 25px;
@@ -1357,12 +1455,64 @@ label[for="rbtn-3"]:active {
     background-color: #000000;
 }
 
+@keyframes cross-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes cross-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-45deg);
+    }
+}
+
 .modal-exit::before {
-    transform: rotate(45deg);
+/*    transform: rotate(45deg);*/
+    animation: cross-1 0.5s 1 ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+
 }
 
 .modal-exit::after {
-    transform: rotate(-45deg);
+/*    transform: rotate(-45deg);*/
+    animation: cross-2 0.5s 1 ease-in-out 1.5s;
+    animation-fill-mode: forwards;
+
+}
+
+.modal-back::before {
+    content: "";
+    
+    position: absolute;
+    right: 5px;
+    top: 0;
+    
+    height: 17px;
+    width: 17px;
+    border-left: 3px solid #000000;
+    border-bottom: 3px solid #000000;
+        
+    transform: rotate(45deg);
+}
+
+.modal-back::after {
+    content: "";
+    
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+    width: 28px;
+    border-bottom: 3px solid #000000;
+    
+    transform: translate(0px, 8px);
 }
 
 .modal-feedback-form {
@@ -1504,7 +1654,7 @@ label[for="rbtn-3"]:active {
     content: "»";
     
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 7px;
 }
 
 .catalog {
@@ -1519,7 +1669,7 @@ label[for="rbtn-3"]:active {
     flex-wrap: wrap;
     
     min-height: 130px;
-    margin-top: 35px;
+    margin-top: 29px;
     margin-bottom: 40px;
     
     font-size: 14px;
@@ -1559,6 +1709,7 @@ label[for="rbtn-3"]:active {
 
 .catalog-controls-tuggle {
     padding: 6px 15px;
+    margin-top: 5px;
     
     background-color: rgba(255, 255, 255, 0.3);
 }
@@ -1583,7 +1734,7 @@ label[for="rbtn-3"]:active {
     
     padding: 0px 25px;
     width: 100%;
-    padding-left: 12px;
+    padding-left: 16px;
     
     border: none;
 /*    border-color: transparent;*/
@@ -1591,7 +1742,7 @@ label[for="rbtn-3"]:active {
     background-color: transparent;
     background-image: url(../img/icon-mark.png);
     background-repeat: no-repeat;
-    background-position: 160px center;
+    background-position: 169px center;
     
     cursor: pointer;
 }
@@ -1653,6 +1804,9 @@ label[for="rbtn-3"]:active {
 
 .catalog-controls-tuggle .bar {
     height: 4px;
+    margin-left: 10%;
+    width: 60%;
+    
     background-color: #ffffff;
 }
 
@@ -1820,7 +1974,6 @@ input[type~="checkbox"]:checked + label::after {
     box-sizing: border-box;
     height: 35px;
     width: 145px;
-    margin-bottom: 4px;
     padding: 0 15px;
     
     font-weight: 500;
@@ -1853,7 +2006,7 @@ input[type~="checkbox"]:checked + label::after {
     position: relative;
     width: 267px;
     
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .pegination {
@@ -1861,8 +2014,8 @@ input[type~="checkbox"]:checked + label::after {
     justify-content: space-between;
     align-self: flex-end;
     width: 190px;
-    margin-top: 85px;
-    margin-bottom: 35px;
+    margin-top: 52px;
+    margin-bottom: 31px;
     
     font-size: 16px;
     line-height: 18px;
@@ -1887,13 +2040,18 @@ input[type~="checkbox"]:checked + label::after {
     position: relative;
 }
 
+.pegination .next {
+    margin-left: 4px;
+}
+
 .pegination .next::before {
     content: "";
     
     position: absolute;
+/*    right: -4px;*/
     
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     
     border-bottom: 3px solid #ffffff;
     border-left: 3px solid #ffffff;
@@ -1905,9 +2063,10 @@ input[type~="checkbox"]:checked + label::after {
     content: "";
     
     position: absolute;
+/*    left: 5px;*/
     
-    width: 8px;
-    height: 8px;
+    width: 7px;
+    height: 7px;
     
     border-bottom: 3px solid #ffffff;
     border-left: 3px solid #ffffff;
@@ -1942,3 +2101,10 @@ input[type~="checkbox"]:checked + label::after {
     border-radius: 50%;
     cursor: context-menu;
 }
+
+/*
+Вопросы:
+1. Как растянуть карту на всю ширину
+2. О какой анимации формы идет речь?
+3. Критерий 4.4 (Фильтр: при выключенном JavaScript кнопка «Применить» должна осуществлять переход на отдельную страницу (отдельную страницу верстать не нужно).)
+4. Пиксель перфект(соответствие макету)*/

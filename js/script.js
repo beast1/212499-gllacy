@@ -4,19 +4,19 @@ var btnFbClose1 = document.querySelector(".modal-feedback .modal-exit");
 
 btnFbOpen.addEventListener("click", function(event) {
     event.preventDefault();
-    modalFb.classList.add("visible");
+    modalFb.classList.add("modal-feedback-visible");
 });
 
 btnFbClose1.addEventListener("click", function(event) {
     event.preventDefault();
-    modalFb.classList.remove("visible");
+    modalFb.classList.remove("modal-feedback-visible");
 });
 
 window.addEventListener("keydown", function(event) {
     if (event.keyCode === 27) {
-        if (modalFb.classList.contains("visible")) {
+        if (modalFb.classList.contains("modal-feedback-visible")) {
             event.preventDefault();
-            modalFb.classList.remove("visible");
+            modalFb.classList.remove("modal-feedback-visible");
         }
     }
 });
