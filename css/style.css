@@ -159,11 +159,11 @@ label[for="rbtn-3"]:active {
 .logo {
     width: 154px;
     height: 64px;
-    margin-right: 9px;
+    margin-right: 10px;
 }
 
 .page-header-menu {
-    margin-top: 13px;
+    margin-top: 15px;
 }
 
 .page-header-menu .menu {
@@ -186,7 +186,7 @@ label[for="rbtn-3"]:active {
     position: relative;
     
     display: inline-block;
-    padding: 9px 14px;
+    padding: 8px 14px;
 /*    margin-right: -2px;*/
     
     font-size: 16px;
@@ -308,7 +308,7 @@ label[for="rbtn-3"]:active {
     
     margin-left: auto;
     margin-top: 16px;
-    width: 265px;
+    width: 263px;
 }
 
 .user-block-controls {
@@ -425,6 +425,10 @@ label[for="rbtn-3"]:active {
     color: #000000;
     
     background-color: #ffffff;
+}
+
+.active-basket-btn {
+    width: 120px;
 }
 
 .search-pop-up {
@@ -690,7 +694,7 @@ label[for="rbtn-3"]:active {
 
 .user-block-contacts p {
     display: block;
-    margin-top: 14px;
+    margin-top: 15px;
 }
 
 .user-block-contacts span {
@@ -1668,7 +1672,12 @@ label[for="rbtn-3"]:active {
 .breadcrumbs {
     font-size: 14px;
     line-height: 16px;
-    font-weight: normal;
+    font-weight: 500;
+}
+
+.breadcrumbs + .h2 {
+    margin-top: 4px;
+    margin-bottom: -4px;
 }
 
 .breadcrumbs ul {
@@ -1807,6 +1816,7 @@ label[for="rbtn-3"]:active {
 
 .label-range {
     margin-top: -1px;
+/*    letter-spacing: 0.3px;*/
 }
 
 .label-range input {
