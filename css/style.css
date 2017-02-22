@@ -1360,6 +1360,10 @@ label[for="rbtn-3"]:active {
     background-repeat: no-repeat;
 }
 
+iframe {
+    width: 100%;
+}
+
 .contacts-wp {
     position: relative;
 }
