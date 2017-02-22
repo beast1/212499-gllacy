@@ -1433,9 +1433,9 @@ iframe {
     opacity: 1;
 }
 
-.ajs-modal-feedback {
-    animation-name: mf-translate;
-    animation-duration: 1.5s;
+.hidden {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .modal-feedback {
@@ -1456,6 +1456,14 @@ iframe {
     
 }
 
+
+/*АНИМАЦИИ*/
+
+.ajs-modal-feedback {
+    animation-name: mf-translate;
+    animation-duration: 1.5s;
+}
+
 @keyframes mf-translate {
     0% {
         transform: translate(0, -2000px);
@@ -1470,6 +1478,28 @@ iframe {
         transform: translate(0, 0);
     }
 }
+
+.ajs-modal-exit {
+    animation-name: cross-translate;
+    animation-duration: 1.5s;
+}
+
+@keyframes cross-translate {
+    0% {
+        transform: translate(0, -2000px);
+    }
+    70% {
+        transform: translate(0, 60px);
+    }
+    90% {
+        transform: translate(0, -20px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/*АНИМАЦИИ*/
 
 .modal-exit,
 .modal-back {
