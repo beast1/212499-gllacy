@@ -1422,24 +1422,14 @@ label[for="rbtn-3"]:active {
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.5);
     
-/*    animation-name: modal-feedback-wrapper;*/
 }
 
-/*
-@keyframes modal-feedback-wrapper {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-*/
-
-.modal-feedback-visible {
+.visible {
     visibility: visible;
     opacity: 1;
-    
+}
+
+.ajs-modal-feedback {
     animation-name: mf-translate;
     animation-duration: 1.5s;
 }
@@ -1460,7 +1450,6 @@ label[for="rbtn-3"]:active {
     background-color: #f8f7f4;
     border-radius: 10px;
     
-/*    animation: mf-translate 1.5s 1 linear;*/
 }
 
 @keyframes mf-translate {
@@ -1508,36 +1497,12 @@ label[for="rbtn-3"]:active {
     background-color: #000000;
 }
 
-@keyframes cross-1 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(45deg);
-    }
-}
-
-@keyframes cross-2 {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(-45deg);
-    }
-}
-
 .modal-exit::before {
-/*    transform: rotate(45deg);*/
-    animation: cross-1 0.5s 1 ease-in-out 1.5s;
-    animation-fill-mode: forwards;
-
+    transform: rotate(45deg);
 }
 
 .modal-exit::after {
-/*    transform: rotate(-45deg);*/
-    animation: cross-2 0.5s 1 ease-in-out 1.5s;
-    animation-fill-mode: forwards;
-
+    transform: rotate(-45deg);
 }
 
 .modal-back::before {
@@ -2161,10 +2126,3 @@ input[type~="checkbox"]:checked + label::after {
     border-radius: 50%;
     cursor: context-menu;
 }
-
-/*
-Вопросы:
-1. Как растянуть карту на всю ширину
-2. О какой анимации формы идет речь?
-3. Критерий 4.4 (Фильтр: при выключенном JavaScript кнопка «Применить» должна осуществлять переход на отдельную страницу (отдельную страницу верстать не нужно).)
-4. Пиксель перфект(соответствие макету)*/
